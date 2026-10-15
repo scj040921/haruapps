@@ -181,20 +181,48 @@
   });
 
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-  const desktopMotion = matchMedia("(min-width: 900px) and (pointer: fine)");
+
   let lifecycle = new AbortController();
   let pageAnimation;
+
+  function initShowcase(signal) {
+    document.querySelectorAll("[data-story]").forEach((stage) => {
+      const scenes = [...stage.querySelectorAll(".story-scene")];
+      const buttons = [...stage.querySelectorAll("[data-scene]")];
+      if (scenes.length < 2) return;
+      stage.classList.add("story-interactive");
+      const select = (index) => {
+        scenes.forEach((scene, i) => {
+          scene.classList.toggle("is-current", i === index);
+          scene.inert = i !== index;
+          scene.setAttribute("aria-hidden", String(i !== index));
+        });
+        buttons.forEach((button, i) =>
+          button.setAttribute("aria-pressed", String(i === index)),
+        );
+      };
+      select(
+        Math.max(
+          0,
+          buttons.findIndex(
+            (button) => button.getAttribute("aria-pressed") === "true",
+          ),
+        ),
+      );
+      stage.addEventListener(
+        "click",
+        (event) => {
+          const button = event.target.closest("[data-scene]");
+          if (button) select(Number(button.dataset.scene));
+        },
+        { signal },
+      );
+    });
+  }
 
   function initMotion(signal) {
     const main = document.querySelector("main");
     if (!main) return;
-    // Media preferences can change after a soft route; restore the static, accessible fallback first.
-    main.querySelectorAll("[data-story]").forEach((stage) => {
-      stage.classList.remove("story-enhanced");
-      stage.querySelectorAll(".story-scene").forEach((scene) => {
-        scene.inert = false;
-      });
-    });
     if (reducedMotion.matches) return;
     const targets = main.querySelectorAll(
       ".section-heading, .product-card, .feature-grid article, .principles > div, .closing-section, .getting-started",
@@ -218,114 +246,13 @@
         once: true,
       });
     }
-
-    // Only visible desktop stages participate in scroll work; mobile uses static, readable panels.
-    const stages = [...main.querySelectorAll("[data-story]")];
-    const active = new Set();
-    const geometries = new Map();
-    let frame = 0;
-    const measure = () => {
-      for (const stage of stages)
-        geometries.set(stage, {
-          top: stage.getBoundingClientRect().top + scrollY,
-          distance: Math.max(1, stage.offsetHeight - innerHeight + 70),
-        });
-    };
-    const draw = () => {
-      frame = 0;
-      if (!desktopMotion.matches || reducedMotion.matches || document.hidden)
-        return;
-      for (const stage of active) {
-        const bounds = geometries.get(stage);
-        if (!bounds) continue;
-        const progress = Math.min(
-          1,
-          Math.max(0, (scrollY - bounds.top + 70) / bounds.distance),
-        );
-        stage.style.setProperty("--story-progress", progress.toFixed(3));
-        const scenes = stage.querySelectorAll(".story-scene");
-        const current = scenes.length > 1 && progress > 0.52 ? 1 : 0;
-        scenes.forEach((scene, index) => {
-          scene.classList.toggle("is-current", index === current);
-          scene.inert = index !== current;
-        });
-        stage
-          .querySelectorAll("[data-scene]")
-          .forEach((button, index) =>
-            button.setAttribute("aria-pressed", String(index === current)),
-          );
-      }
-    };
-    const schedule = () => {
-      if (!frame && active.size) frame = requestAnimationFrame(draw);
-    };
-    const configure = () => {
-      const enabled = desktopMotion.matches && !reducedMotion.matches;
-      for (const stage of stages) {
-        stage.classList.toggle("story-enhanced", enabled);
-        stage.querySelectorAll(".story-scene").forEach((scene) => {
-          scene.inert = false;
-        });
-      }
-      measure();
-      schedule();
-    };
-    if ("IntersectionObserver" in window && stages.length) {
-      const visibility = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) active.add(entry.target);
-            else active.delete(entry.target);
-          }
-          schedule();
-        },
-        { rootMargin: "80px 0px" },
-      );
-      stages.forEach((stage) => visibility.observe(stage));
-      signal.addEventListener(
-        "abort",
-        () => {
-          visibility.disconnect();
-          cancelAnimationFrame(frame);
-        },
-        { once: true },
-      );
-      window.addEventListener("scroll", schedule, { passive: true, signal });
-      window.addEventListener(
-        "resize",
-        () => {
-          measure();
-          schedule();
-        },
-        { passive: true, signal },
-      );
-      document.addEventListener("visibilitychange", schedule, { signal });
-      desktopMotion.addEventListener("change", configure, { signal });
-      reducedMotion.addEventListener("change", configure, { signal });
-      configure();
-      main.addEventListener(
-        "click",
-        (event) => {
-          const button = event.target.closest("[data-scene]");
-          if (!button) return;
-          const stage = button.closest("[data-story]");
-          if (!stage?.classList.contains("story-enhanced")) return;
-          const bounds = geometries.get(stage);
-          const progress = Number(button.dataset.scene) ? 0.79 : 0.25;
-          window.scrollTo({
-            top: bounds.top - 70 + bounds.distance * progress,
-            behavior: "smooth",
-          });
-        },
-        { signal },
-      );
-    }
   }
 
   function initPage(animate = false) {
     lifecycle.abort();
     lifecycle = new AbortController();
     initFilters(lifecycle.signal);
+    initShowcase(lifecycle.signal);
     initMotion(lifecycle.signal);
     pageAnimation?.cancel();
     if (animate && !reducedMotion.matches) {

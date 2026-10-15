@@ -19,6 +19,17 @@ async function walk(dir) {
   }
 }
 await walk(root);
+const home = await readFile(path.join(root, "index.html"), "utf8");
+assert.match(
+  home,
+  /<main[^>]*>\s*<section class="story-stage story-home"/,
+  "Product showcase must be the first homepage section",
+);
+assert.equal(
+  (home.match(/data-story\b/g) || []).length,
+  1,
+  "Duplicate homepage showcase",
+);
 let checkedLinks = 0;
 const iconBytes =
   (await stat(path.join(root, "assets/resume-studio.png"))).size +
