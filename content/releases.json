@@ -1,0 +1,423 @@
+{
+  "checkedAt": "2026-10-15T06:44:55.282Z",
+  "products": {
+    "resume-studio": {
+      "stable": {
+        "tag": "v0.9.6",
+        "name": "拾简 Stable v0.9.6",
+        "channel": "stable",
+        "published": "2026-10-15T06:19:05Z",
+        "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.6",
+        "body": "# v0.9.6\r\n\r\n- 修复 Android 下载并校验更新 APK 后提交系统安装会话失败的问题。安装状态回调使用显式、可变 PendingIntent，让 Android PackageInstaller 能返回安装结果。\r\n- 增加生产 APK 验收，确认安装状态 PendingIntent 可接收系统回传状态；继续验证已签名 Nightly 到 Stable 的 Android 覆盖安装。\r\n- 保留 v0.9.5 的更新签名与摘要校验、同日 Nightly 升级版本号和 Android 界面优化。",
+        "assets": [
+          {
+            "name": "ResumeStudio-Android-v0.9.6.apk",
+            "size": 8226875,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-Android-v0.9.6.apk",
+            "sha256": "efec3c94549c1b33907fa9465b2a40a3db4cfd8587fd4a2119f057f69339a33c"
+          },
+          {
+            "name": "ResumeStudio-v0.9.6-Setup-x64.exe",
+            "size": 54578814,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-Setup-x64.exe",
+            "sha256": "8f4add3bc70dedc796f989b223ba1039ed77cccfec0d6d33da1175b191800a50"
+          },
+          {
+            "name": "ResumeStudio-v0.9.6-windows-x64.zip",
+            "size": 70104161,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-windows-x64.zip",
+            "sha256": "d28a8e8272606e9c1a370a026aba590b9c46a2ac41a295b0d2f311a64d795b1e"
+          },
+          {
+            "name": "SHA256SUMS.txt",
+            "size": 570,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/SHA256SUMS.txt",
+            "sha256": "d37c1094bf563dbf99ea2f601e8bea45312ed3cd556a5ab75e5494dff709d17f"
+          }
+        ]
+      },
+      "nightly": {
+        "tag": "nightly-20261015-101c38ec",
+        "name": "拾简 Nightly nightly-20261015-101c38ec",
+        "channel": "nightly",
+        "published": "2026-10-15T06:11:26Z",
+        "url": "https://github.com/scj040921/resume-studio/releases/tag/nightly-20261015-101c38ec",
+        "body": "Nightly 每日测试版，可能包含尚未稳定的改动。\n\n源码提交：101c38ec0d2e944c056ea282b29a1709d5ebfef9",
+        "assets": [
+          {
+            "name": "ResumeStudio-Android-v0.9.6-nightly.20261015.101c38ec.apk",
+            "size": 8226875,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-Android-v0.9.6-nightly.20261015.101c38ec.apk",
+            "sha256": "08e2aff3b09e6600c1e8ffc1cc1074578a0f8b50816e87941844d7fd64efe62b"
+          },
+          {
+            "name": "ResumeStudio-v0.9.6-nightly.20261015.101c38ec-Setup-x64.exe",
+            "size": 54584124,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-v0.9.6-nightly.20261015.101c38ec-Setup-x64.exe",
+            "sha256": "4a696ba0819abedf844449173a011ce3a84ea006c2a0ef9ad5508f113444b39f"
+          },
+          {
+            "name": "ResumeStudio-v0.9.6-nightly.20261015.101c38ec-windows-x64.zip",
+            "size": 70104118,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-v0.9.6-nightly.20261015.101c38ec-windows-x64.zip",
+            "sha256": "f098e9efc20b7d79b7b3538943e0a48c5d8457aecfb8a0ca0f41eafd7d7492d8"
+          },
+          {
+            "name": "SHA256SUMS.txt",
+            "size": 622,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/SHA256SUMS.txt",
+            "sha256": "c05abe556048d8f50d027b421f4786b4f2ffc55165ab63656e2ed77b07991236"
+          }
+        ]
+      },
+      "history": [
+        {
+          "tag": "v0.9.6",
+          "name": "拾简 Stable v0.9.6",
+          "channel": "stable",
+          "published": "2026-10-15T06:19:05Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.6",
+          "body": "# v0.9.6\r\n\r\n- 修复 Android 下载并校验更新 APK 后提交系统安装会话失败的问题。安装状态回调使用显式、可变 PendingIntent，让 Android PackageInstaller 能返回安装结果。\r\n- 增加生产 APK 验收，确认安装状态 PendingIntent 可接收系统回传状态；继续验证已签名 Nightly 到 Stable 的 Android 覆盖安装。\r\n- 保留 v0.9.5 的更新签名与摘要校验、同日 Nightly 升级版本号和 Android 界面优化。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.6.apk",
+              "size": 8226875,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-Android-v0.9.6.apk",
+              "sha256": "efec3c94549c1b33907fa9465b2a40a3db4cfd8587fd4a2119f057f69339a33c"
+            },
+            {
+              "name": "ResumeStudio-v0.9.6-Setup-x64.exe",
+              "size": 54578814,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-Setup-x64.exe",
+              "sha256": "8f4add3bc70dedc796f989b223ba1039ed77cccfec0d6d33da1175b191800a50"
+            },
+            {
+              "name": "ResumeStudio-v0.9.6-windows-x64.zip",
+              "size": 70104161,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-windows-x64.zip",
+              "sha256": "d28a8e8272606e9c1a370a026aba590b9c46a2ac41a295b0d2f311a64d795b1e"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 570,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/SHA256SUMS.txt",
+              "sha256": "d37c1094bf563dbf99ea2f601e8bea45312ed3cd556a5ab75e5494dff709d17f"
+            }
+          ]
+        },
+        {
+          "tag": "v0.9.5",
+          "name": "拾简 Stable v0.9.5",
+          "channel": "stable",
+          "published": "2026-10-15T01:54:04Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.5",
+          "body": "# v0.9.5\r\n\r\n- 修复 Android 更新检查无法使用 RSA-PSS 签名算法的问题，继续校验官方签名和 APK SHA-256。\r\n- Android 自动同步每 30 分钟比较本机资料和云端快照时间；较新一端自动同步，无法判断或同一时间的冲突交给用户选择。下载前自动备份本机资料。\r\n- 优化 Android 全屏系统栏、悬浮高斯模糊底栏、Haru 毛玻璃卡片、对称触控按钮和分页排版。\r\n- 恢复卡片一镜到底共享扩展，并覆盖首页、更多、列表与详情卡片；卡片外框连续形变，文字独立淡入淡出，避免字形拉伸重影。底栏加入面试背诵、模板中心和岗位查询，收藏、投递和日程保留在首页卡片及更多入口。\r\n- 夜间同日多次发布使用递增的 Android 版本号，允许自动检查并升级至当天最新 Nightly。\r\n- 保留预测性返回手势，并减少不必要的页面和 WebView 资源持有。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.5.apk",
+              "size": 8226875,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.5/ResumeStudio-Android-v0.9.5.apk",
+              "sha256": "7caaf0895b7d29d98fdffc94dbb08fa3762a661c2abe1aa22feffd2ef918d18d"
+            },
+            {
+              "name": "ResumeStudio-v0.9.5-Setup-x64.exe",
+              "size": 54582281,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.5/ResumeStudio-v0.9.5-Setup-x64.exe",
+              "sha256": "a227e4bd1f68981c436fa12ee0b94cc5acb61ef4f2e16f6e6a1886461267254a"
+            },
+            {
+              "name": "ResumeStudio-v0.9.5-windows-x64.zip",
+              "size": 70104039,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.5/ResumeStudio-v0.9.5-windows-x64.zip",
+              "sha256": "beb5783daaa65ce0875f5e4c8f99ff9c64b31fff9670f83ec0375e53029a29e3"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 570,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.5/SHA256SUMS.txt",
+              "sha256": "fbfdddccbb9f0a478850be2dd0dd8b919257c95955574ef6e9a5ced2a21cd951"
+            }
+          ]
+        },
+        {
+          "tag": "v0.9.4",
+          "name": "拾简 Stable v0.9.4",
+          "channel": "stable",
+          "published": "2026-10-14T16:48:40Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.4",
+          "body": "# v0.9.4\r\n\r\n- 修复 Windows 与 Android 的面试题库、题目和背诵状态跨端同步，并在手机显示两端题库数量。\r\n- Android 可在后台网络可用时每 30 分钟自动同步；冲突会等待用户选择，不会自动覆盖。\r\n- 安卓更新检查复用桌面端的官方签名通道，校验 RSA-PSS 签名与 APK SHA-256 后交给系统安装器。\r\n- 统一按钮圆角，改用悬浮底栏并调整窄屏阅读、表单和卡片布局。\r\n- 收紧 WebView、后台任务和安装流程的资源清理。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.4.apk",
+              "size": 8218611,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.4/ResumeStudio-Android-v0.9.4.apk",
+              "sha256": "dc0dff35f08496fee7e261d86c7075c5661f0f102b1a8b27442bef536355814b"
+            },
+            {
+              "name": "ResumeStudio-v0.9.4-Setup-x64.exe",
+              "size": 54581224,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.4/ResumeStudio-v0.9.4-Setup-x64.exe",
+              "sha256": "f7edfabc18e41a1fc98635600e754ed0ec5fe1510e1515faf7cc3a321ecde6b9"
+            },
+            {
+              "name": "ResumeStudio-v0.9.4-windows-x64.zip",
+              "size": 70103669,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.4/ResumeStudio-v0.9.4-windows-x64.zip",
+              "sha256": "eaea153532fca044cb5463db631e16b0f8ad45ac235b3955a495f67b048b31d4"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 570,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.4/SHA256SUMS.txt",
+              "sha256": "410f1cd9416cf4f127241c7c2fbd5ae01109766e305f439dfdb767c183529832"
+            }
+          ]
+        },
+        {
+          "tag": "v0.9.2",
+          "name": "拾简 Stable v0.9.2 — Windows x64",
+          "channel": "stable",
+          "published": "2026-10-14T11:44:39Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.2",
+          "body": "# v0.9.2\r\n\r\n- 完善题库导入识别：支持 Word 自动编号、继承的编号样式、独立加粗及大字号标题；优先使用正式标题样式与大纲层级。\r\n- 增加中文题号、圈号、问题／题目／Q 标记和独立加粗标题识别，减少答案步骤及代码块的误切。\r\n- 自动编号切题保留嵌套列表与表格正文，忽略取消编号的普通段落；导入预览显示识别依据。\r\n- 使用实际的 82 题 Word 文档验证题目拆分和导入保存。",
+          "assets": [
+            {
+              "name": "ResumeStudio-v0.9.2-Setup-x64.exe",
+              "size": 54575110,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/ResumeStudio-v0.9.2-Setup-x64.exe",
+              "sha256": "113d4c5a69f8ae3a65165f571ac265b1285cedab9f818f308117f0548ec39fe2"
+            },
+            {
+              "name": "ResumeStudio-v0.9.2-windows-x64.zip",
+              "size": 70086902,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/ResumeStudio-v0.9.2-windows-x64.zip",
+              "sha256": "f08fe833e4e533d40b9ae55cf17dd2568e5ed2ed3bde1dd18c6908b29f821efc"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 570,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/SHA256SUMS.txt",
+              "sha256": "f8f6383579af65cc242a3194fddaea5b855ba3d17b41a3387e7ee205220acd16"
+            }
+          ]
+        },
+        {
+          "tag": "v0.9.1",
+          "name": "拾简 Stable v0.9.1 — Windows x64",
+          "channel": "stable",
+          "published": "2026-10-14T11:24:13Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.1",
+          "body": "# v0.9.1\r\n\r\n- 修复 Word 题库导入时，空白标题段落被识别为题目，导致“题目标题无效”的问题；保留空白段落后的答案内容。\r\n- 导入预览忽略空白标题层级，并在保存前检查题目标题长度与有效性。\r\n- 收藏列表按卡片实际高度紧密排列，移除收起后的多余空位；展开时后续卡片自然下移，收起时恢复。",
+          "assets": [
+            {
+              "name": "ResumeStudio-v0.9.1-Setup-x64.exe",
+              "size": 54572628,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/ResumeStudio-v0.9.1-Setup-x64.exe",
+              "sha256": "0725014a9271aa952d9a5f678bc6434ce452c2d535540ee1714aa665fdf51c8c"
+            },
+            {
+              "name": "ResumeStudio-v0.9.1-windows-x64.zip",
+              "size": 70082241,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/ResumeStudio-v0.9.1-windows-x64.zip",
+              "sha256": "33a2c1ecde119589b90a3f8869af882c34a7d571bbefeffe14ae9ccf7b9db521"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 570,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/SHA256SUMS.txt",
+              "sha256": "a769f910864badd153cf5b987a38d3919e66510a956fdd841d5481b995dc3422"
+            }
+          ]
+        }
+      ]
+    },
+    "haruphoto": {
+      "stable": {
+        "tag": "v1.3.8",
+        "name": "haruphoto 1.3.8 Stable · v1.3.8",
+        "channel": "stable",
+        "published": "2026-10-14T07:38:16Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.8",
+        "body": "Source commit: 3c70374aba7caf7f452b3745323907a23a1b09cb\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n### 新功能\r\n\r\n- 地图相册可按需搜索地名。按回车或点击搜索提交，不会自动联想；搜索结果优先使用简体中文名称。选择结果可直接定位，放置照片时可把预览中的照片批次放到该地点。\r\n- 搜索地点会把输入的地名发送给 OpenStreetMap Nominatim；照片、地点记录和批注仍只保存在本机。\r\n- 地图操作界面和归属说明统一为简体中文。\r\n\r\n### 地图文字说明\r\n\r\n当前底图由 OpenStreetMap PNG 图块提供，图中文字已由底图服务渲染，无法在客户端强制翻译。地点搜索结果及应用界面使用简体中文；底图地名仍按图块实际包含的语言显示。\r\n\r\n### 安装\r\n\r\n安装版下载 `haruphoto-v1.3.8-Setup.exe`；便携版完整解压 `haruphoto-v1.3.8-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "assets": [
+          {
+            "name": "haruphoto-v1.3.8-portable.zip",
+            "size": 90438974,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-portable.zip",
+            "sha256": "10d11d6f1528d97ab23982379824bef4ceb8fa99f66b786f97054668bc71fc92"
+          },
+          {
+            "name": "haruphoto-v1.3.8-Setup.exe",
+            "size": 162223742,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-Setup.exe",
+            "sha256": "d47df02ad21362ddf8cea0fb989511b181d56f8d7d3c37261a2b18689908d594"
+          },
+          {
+            "name": "SHA256SUMS.txt",
+            "size": 270,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/SHA256SUMS.txt",
+            "sha256": "72a81beef4a63d0c9af9f48f493309cfdbd8666a2a3dfbc0af2bf2f57d5910ac"
+          }
+        ]
+      },
+      "nightly": {
+        "tag": "nightly-20261014-18",
+        "name": "haruphoto 1.3.8 Nightly · nightly-20261014-18",
+        "channel": "nightly",
+        "published": "2026-10-14T07:42:43Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/nightly-20261014-18",
+        "body": "Source commit: 3c70374aba7caf7f452b3745323907a23a1b09cb\n\nNightly 每日测试版：根据当前远端源码构建，可能不稳定。可在设置中切回 Stable。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n### 新功能\r\n\r\n- 地图相册可按需搜索地名。按回车或点击搜索提交，不会自动联想；搜索结果优先使用简体中文名称。选择结果可直接定位，放置照片时可把预览中的照片批次放到该地点。\r\n- 搜索地点会把输入的地名发送给 OpenStreetMap Nominatim；照片、地点记录和批注仍只保存在本机。\r\n- 地图操作界面和归属说明统一为简体中文。\r\n\r\n### 地图文字说明\r\n\r\n当前底图由 OpenStreetMap PNG 图块提供，图中文字已由底图服务渲染，无法在客户端强制翻译。地点搜索结果及应用界面使用简体中文；底图地名仍按图块实际包含的语言显示。\r\n\r\n### 安装\r\n\r\n安装版下载 `haruphoto-v1.3.8-Setup.exe`；便携版完整解压 `haruphoto-v1.3.8-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "assets": [
+          {
+            "name": "haruphoto-nightly-20261014-18-portable.zip",
+            "size": 90438940,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/haruphoto-nightly-20261014-18-portable.zip",
+            "sha256": "f9869cb399ec07a604ca3db8d56b81a0bd21b224b6094d66b2bd89bca6b656d6"
+          },
+          {
+            "name": "haruphoto-nightly-20261014-18-Setup.exe",
+            "size": 162223742,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/haruphoto-nightly-20261014-18-Setup.exe",
+            "sha256": "68569709da378880cefa1c3748c2c1d33afa680283a638487622b5fd77795eec"
+          },
+          {
+            "name": "SHA256SUMS.txt",
+            "size": 296,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/SHA256SUMS.txt",
+            "sha256": "ac1782367993f45006742c2640b1c544abf4142b9b5d71bad5e2f6d6fa94c05e"
+          }
+        ]
+      },
+      "history": [
+        {
+          "tag": "v1.3.8",
+          "name": "haruphoto 1.3.8 Stable · v1.3.8",
+          "channel": "stable",
+          "published": "2026-10-14T07:38:16Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.8",
+          "body": "Source commit: 3c70374aba7caf7f452b3745323907a23a1b09cb\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n### 新功能\r\n\r\n- 地图相册可按需搜索地名。按回车或点击搜索提交，不会自动联想；搜索结果优先使用简体中文名称。选择结果可直接定位，放置照片时可把预览中的照片批次放到该地点。\r\n- 搜索地点会把输入的地名发送给 OpenStreetMap Nominatim；照片、地点记录和批注仍只保存在本机。\r\n- 地图操作界面和归属说明统一为简体中文。\r\n\r\n### 地图文字说明\r\n\r\n当前底图由 OpenStreetMap PNG 图块提供，图中文字已由底图服务渲染，无法在客户端强制翻译。地点搜索结果及应用界面使用简体中文；底图地名仍按图块实际包含的语言显示。\r\n\r\n### 安装\r\n\r\n安装版下载 `haruphoto-v1.3.8-Setup.exe`；便携版完整解压 `haruphoto-v1.3.8-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.8-portable.zip",
+              "size": 90438974,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-portable.zip",
+              "sha256": "10d11d6f1528d97ab23982379824bef4ceb8fa99f66b786f97054668bc71fc92"
+            },
+            {
+              "name": "haruphoto-v1.3.8-Setup.exe",
+              "size": 162223742,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-Setup.exe",
+              "sha256": "d47df02ad21362ddf8cea0fb989511b181d56f8d7d3c37261a2b18689908d594"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 270,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/SHA256SUMS.txt",
+              "sha256": "72a81beef4a63d0c9af9f48f493309cfdbd8666a2a3dfbc0af2bf2f57d5910ac"
+            }
+          ]
+        },
+        {
+          "tag": "v1.3.4",
+          "name": "haruphoto 1.3.4 Stable · v1.3.4",
+          "channel": "stable",
+          "published": "2026-10-13T15:00:01Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.4",
+          "body": "Source commit: 630bc86c6175663f23170795013a14167fad9e0f\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.4：更新流程、深色对比度与按钮样式\r\n\r\n- 将手动检查更新入口收敛到“设置 → 关于与更新”，避免重复入口和设置弹窗冲突造成的崩溃。\r\n- 检查更新请求随设置窗口生命周期取消；关闭窗口后不再访问已销毁的界面。\r\n- 更新完成后等待新进程报告启动就绪，再提交版本切换；启动失败时恢复旧文件并重新打开旧版本。\r\n- 修正 Windows PowerShell 更新器的模块搜索路径和工作目录，避免升级重启后清理工作目录时失败。\r\n- 调整深色模式下设置页标题文字的前景色，增强层级标题的可读性。\r\n- 统一操作按钮圆角为 12px；照片卡片、详情操作和设置按钮沿用同一规则，边框卡片保持原有造型。\r\n\r\n本地验证包括 57 项逻辑回归、6 项 Windows PowerShell 更新器场景、按钮样式源文件检查，以及桌面构建的版本与启动路径核对。自动检查不等同于人工逐项点击验收。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.4-portable.zip",
+              "size": 90389041,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.4/haruphoto-v1.3.4-portable.zip",
+              "sha256": "780cda1811f8a01d108a2a6b5e4518556189f3d6d3f5e79590b85d385e78ced5"
+            },
+            {
+              "name": "haruphoto-v1.3.4-Setup.exe",
+              "size": 162173566,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.4/haruphoto-v1.3.4-Setup.exe",
+              "sha256": "fd254c64e94b1c640748942b7d1e48f4cff4a38e6d91a06b30fe1dd76f04c12e"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 270,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.4/SHA256SUMS.txt",
+              "sha256": "3a6cc069857f7ef9a1bc42eabf58a227c2ed59d347f84bad1d7a9edd93a18a53"
+            }
+          ]
+        },
+        {
+          "tag": "v1.3.3",
+          "name": "haruphoto 1.3.3 Stable · v1.3.3",
+          "channel": "stable",
+          "published": "2026-10-13T13:59:14Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.3",
+          "body": "Source commit: 22525a8b01fe3f768761ff5ec65767a21c9916cf\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.3：Stable / Nightly 更新通道\r\n\r\n- 更新发现统一读取本仓库 GitHub Releases。Stable 只读取正式稳定版；Nightly 读取独立每日预发行版本。\r\n- 设置 → 关于与更新，新增通道选择与公益代理开关。Nightly 有不稳定风险，可主动切回 Stable；切换可能回退版本，不自动安装。\r\n- 内置 `https://gh-proxy.org/` 为直连失败后的公开包备用下载通道，不接收照片、图库、登录令牌或 API 请求。关闭开关后仅直连。\r\n- SHA256 以 GitHub 直接返回的校验信息为准；错误大小、损坏包、篡改包、错误发行通道/标签都拒绝安装。失败保留旧版本。\r\n- 源码推送到 master 后，Action 自动编译并保存七天测试产物；每天北京时间 02:23 从最新 master 检查变化，有变化才发布 Nightly。Stable 仍需推送 `vX.Y.Z` 标签。\r\n- Nightly 标签不可变，每个安装包附带通道、源码 commit、标签及版本信息。不会覆盖 Stable 的 latest 入口，也不重复安装同一个 Nightly。\r\n\r\n公共代理不保证持续可用；GitHub API 限流时直接读取同仓库 Release 页面和 Release 资产作为备用；GitHub 全部直连路径不通则明确失败，不使用第三方提供的元数据冒充 GitHub。GitHub 定时任务可能延迟或因仓库长期无活动暂停。\r\n既有安装器“此应用无法运行”的反馈尚缺实际报错文件路径与哈希，本次通道改造不代表该安装问题已定位。安装器仍未商业签名。\r\n新增设置本轮已通过编译及逻辑测试，尚未进行完整人工点击验收。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.3-portable.zip",
+              "size": 90386874,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.3/haruphoto-v1.3.3-portable.zip",
+              "sha256": "03856202fb7b0d170e4f8262ab750a75b36776175be35166ec898258569f8b76"
+            },
+            {
+              "name": "haruphoto-v1.3.3-Setup.exe",
+              "size": 162171518,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.3/haruphoto-v1.3.3-Setup.exe",
+              "sha256": "0ce964f4979edefd32ff53c585f7809551ac3706766e6ed7c9b196348444b539"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 270,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.3/SHA256SUMS.txt",
+              "sha256": "cc2e88eaebc92b87104c951b937a04d7d297e50511a1f2b32fa9323b7e59533c"
+            }
+          ]
+        },
+        {
+          "tag": "v1.3.2",
+          "name": "haruphoto v1.3.2",
+          "channel": "stable",
+          "published": "2026-10-09T09:19:16Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.2",
+          "body": "# haruphoto v1.3.2\n\n## 下载与安装\n\n- 推荐：下载 `haruphoto-v1.3.2-Setup.exe`，直接双击安装，无需运行 CMD，也无需额外安装 .NET 或 VC++ 运行时。\n- 便携版：下载 `haruphoto-v1.3.2-portable.zip`，完整解压后运行 `PhotoAlbum.exe`，不要只复制 EXE。\n- 支持 Windows 10 1809+ / Windows 11 的 x64 系统；不支持 32 位 Windows。\n- GitHub 自动生成的 Source code 是源码，不是安装包。\n- 当前安装器未购买商业代码签名证书，Windows 可能提示未知发布者。请核对本仓库与 SHA256；本版本并未消除 SmartScreen 签名提示。\n\n## 改进\n\n- 保留原比例紧密瀑布流、缩放、切换动画、取色模糊背景和新版顶栏/底栏。\n- 设置分区、搜索、保存/取消、分区重置及自定义外观方案；新增 2–4 张对比选片与同步缩放。\n- 修复详情栏被胶片条挡住、远端缩略图空白、深色设置卡片和侧栏显示问题。\n- 修复快速预览切换与关闭时的动画竞争、重复悬停事件、批量选择残留。\n- 补齐预览序号和损坏图片提示；取色采用小尺寸采样，降低大照片的内存开销。\n- 关闭自动扫描后不再监控文件夹，离线图片的元数据不会因普通保存丢失。\n- 更新只提示不强制安装；可查看版本说明、取消下载。先下载并验证，失败保持当前应用运行；升级替换失败会回滚。\n- 完善公开更新清单、SHA256、完整自包含包与发布前自动测试，避免朋友必须运行 CMD 安装。\n\n## 验证边界\n\n已在开发机使用独立临时图库执行界面回归，并测试下载安装器核心、损坏包拒绝及升级回滚。没有真实覆盖所有 Windows、DPI、显卡或无开发环境的全新电脑，不能承诺绝对没有 bug。详细范围见仓库 `docs/RELEASE_TEST_REPORT.md`。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.2-portable.zip",
+              "size": 90377786,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/haruphoto-v1.3.2-portable.zip",
+              "sha256": "915d1ad77965023c27616666acf3600310cd274115fbb2f18016d8ab6d106c49"
+            },
+            {
+              "name": "haruphoto-v1.3.2-Setup.exe",
+              "size": 162161790,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/haruphoto-v1.3.2-Setup.exe",
+              "sha256": "68177c46ed9dd28d06e349c9eb99e7861a39f7569aacf4d362cf97835d4a72f9"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 270,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/SHA256SUMS.txt",
+              "sha256": "6766b30806ca38d80ce458d7196d194123edbfadcb84ca2912dd9f23f9a27c86"
+            }
+          ]
+        },
+        {
+          "tag": "v1.2.0",
+          "name": "haruphoto v1.2.0",
+          "channel": "stable",
+          "published": "2026-08-22T07:18:11Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.2.0",
+          "body": "## v1.2.0\\n\\n- 移除批量操作栏中重复的「收藏」按钮\\n- 将批量「分类」入口改名为「常用操作」\\n- 修复胶片预览横向滚动条无法拖动的问题\\n- 增加左侧固定「检查更新」入口\\n- 完善 GitHub Release 正式版发布与自动更新流程\\n\\nSHA-256: F36F1DF37E7F657599BB2883BE95BB20A1265F77CE6A70370BE07AC7039157CF",
+          "assets": [
+            {
+              "name": "haruphoto-v1.2.0-portable.zip",
+              "size": 53794106,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.2.0/haruphoto-v1.2.0-portable.zip",
+              "sha256": "3436e23bd8801ec2740ac0e1161ee453526082793137bf4d393bd3601a6ca0ea"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

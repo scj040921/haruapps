@@ -1,0 +1,16 @@
+{
+  "name": "haru-software-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "拾简 Resume Studio 与 Haruphoto 的软件介绍、下载与教程站",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sync": "node scripts/sync-releases.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "preview": "node scripts/serve.mjs"
+  }
+}
