@@ -2,7 +2,7 @@
 
 拾简 Resume Studio 与 Haruphoto 的独立软件发布网站：产品介绍、正式版 / Nightly 下载、十篇使用教程、更新日志、隐私与反馈入口。
 
-正式地址：<https://scj040921.github.io/software-hub/>
+正式地址：<https://scj040921.github.io/haruapps/>
 
 ## 本地预览
 
@@ -14,7 +14,7 @@ npm run check
 npm run preview
 ```
 
-打开 <http://127.0.0.1:4173/software-hub/>。预览服务器仅监听本机。
+打开 <http://127.0.0.1:4173/haruapps/>。预览服务器仅监听本机。
 
 ## 内容在哪里修改
 
@@ -44,7 +44,7 @@ npm run check
 
 ## GitHub Pages 上线
 
-1. 将本目录作为独立公开仓库 `scj040921/software-hub`，默认分支为 `main`。
+1. 将本目录作为独立公开仓库 `scj040921/haruapps`，默认分支为 `main`。
 2. 在仓库 Settings → Pages → Build and deployment 选择 GitHub Actions。
 3. 推送 main 或手动运行部署工作流。所有检查通过才上传网站并部署。
 4. 在 Actions 确认部署成功，再打开正式网址。

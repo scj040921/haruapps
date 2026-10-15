@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(fileURLToPath(new URL("../dist/", import.meta.url)));
 const port = Number(process.env.PORT || 4173);
-const prefix = "/software-hub";
+const prefix = "/haruapps";
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -45,5 +45,5 @@ createServer(async (req, res) => {
     );
   }
 }).listen(port, "127.0.0.1", () =>
-  console.log(`Local: http://127.0.0.1:${port}/software-hub/`),
+  console.log(`Local: http://127.0.0.1:${port}/haruapps/`),
 );

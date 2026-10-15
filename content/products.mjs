@@ -2,7 +2,7 @@ export const site = {
   name: "Haru 软件集",
   subtitle: "为认真生活的你，做一点好用的软件。",
   origin: "https://scj040921.github.io",
-  base: "/software-hub/",
+  base: "/haruapps/",
   author: "scj040921",
   contentReviewedAt: "2026-10-15T00:00:00+08:00",
 };
