@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 import { products, site } from "../content/products.mjs";
 import { guides } from "../content/guides.mjs";
 import { createHash } from "node:crypto";
+import { featureStories } from "../content/feature-stories.mjs";
+import { featureVisual } from "./feature-visuals.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const out = path.join(root, "dist");
@@ -32,6 +34,7 @@ const versions = Object.fromEntries(
     [
       "style.css",
       "motion.css",
+      "features.css",
       "app.js",
       "resume-studio.png",
       "haruphoto.png",
@@ -46,6 +49,8 @@ const versions = Object.fromEntries(
 );
 const buildId = createHash("sha256")
   .update(JSON.stringify(versions))
+  .update(JSON.stringify(featureStories))
+  .update(await readFile(new URL("./feature-visuals.mjs", import.meta.url)))
   .update(JSON.stringify(releases))
   .update(JSON.stringify(products))
   .update(JSON.stringify(guides))
@@ -124,7 +129,7 @@ function layout({
   return `<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="theme-color" content="#f7f8f2">
 <meta name="haru-base" content="${site.base}"><meta name="haru-build" content="${buildId}">
-<title>${e(title)} · ${site.name}</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${canonical}"><link rel="icon" type="image/svg+xml" href="${href("assets/favicon.svg")}"><meta property="og:type" content="website"><meta property="og:title" content="${e(title)} · ${site.name}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${site.origin}${href("assets/social.svg")}"><link rel="stylesheet" href="${asset("style.css")}"><link rel="stylesheet" href="${asset("motion.css")}"><script src="${asset("app.js")}" defer></script>${extra}</head>
+<title>${e(title)} · ${site.name}</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${canonical}"><link rel="icon" type="image/svg+xml" href="${href("assets/favicon.svg")}"><meta property="og:type" content="website"><meta property="og:title" content="${e(title)} · ${site.name}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${site.origin}${href("assets/social.svg")}"><link rel="stylesheet" href="${asset("style.css")}"><link rel="stylesheet" href="${asset("motion.css")}"><link rel="stylesheet" href="${asset("features.css")}"><script src="${asset("app.js")}" defer></script>${extra}</head>
 <body><a class="skip-link" href="#main">跳到正文</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="${href("")}" aria-label="Haru 软件集首页">${logo}<span>Haru<span class="brand-sub">软件集</span></span></a>
 <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="打开导航菜单">${icon("menu")}</button>
@@ -184,6 +189,15 @@ function showcase(product) {
   return `<section class="story-stage ${product ? "story-single" : "story-home"}" data-story aria-label="产品动态展示"><div class="story-inner"><div class="story-heading"><div class="eyebrow">IN FOCUS / 为日常，多想一步</div><${product ? "h2" : "h1"}>${title}</${product ? "h2" : "h1"}><p>从一次认真准备，到一段值得回味的生活。<br>让工具安静地陪你，把每一件小事做好。</p>${collection.length > 1 ? `<div class="story-controls" role="group" aria-label="选择展示的软件">${collection.map((p, i) => `<button type="button" data-scene="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${p.name}${icon("arrow")}</button>`).join("")}</div>` : `<a class="story-action" href="${href(`downloads/?software=${product.id}`)}">开始使用 ${product.name}${icon("arrow")}</a>`}${product ? "" : `<a class="story-browse" href="#software">浏览全部软件 ${icon("arrow")}</a>`}</div><div class="story-canvas">${collection.map((p, i) => `<figure class="story-scene ${p.id === "haruphoto" ? "scene-photo" : "scene-resume"} ${i === 0 ? "is-current" : ""}"><div class="story-scene-label">${appIcon(p)}<span>${p.name}<small>${p.id === "haruphoto" ? "整理 · 欣赏 · 重温" : "简历 · 求职 · 面试"}</small></span><span class="story-platform">${p.platforms.join(" / ")}</span></div><div class="story-window">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div><figcaption><b>${p.summary}</b><span>${p.id === "resume-studio" ? "多端准备，资料由你掌握。" : "在自己的图库，重新发现日常。"}</span><a href="${href(`software/${p.id}/`)}">了解 ${p.name}${icon("arrow")}</a></figcaption></figure>`).join("")}</div></div></section>`;
 }
 
+function featureShortcuts(p) {
+  return `<div class="product-shortcuts" aria-label="${p.name} 功能介绍">${featureStories[p.id].map((story) => `<a href="${href(`software/${p.id}/#feature-${story.id}`)}">${icon(story.icon)}${story.label}${icon("arrow")}</a>`).join("")}</div>`;
+}
+
+function illustratedFeatures(p) {
+  const stories = featureStories[p.id];
+  return `<section class="feature-stories shell ${p.color}" id="features"><div class="section-heading"><div><div class="eyebrow">A CLOSER LOOK / 功能图解</div><h2>${p.summary}</h2></div><p class="detail-description">${p.detail}</p></div><nav class="feature-jump" aria-label="${p.name} 功能目录">${stories.map((story, i) => `<a href="#feature-${story.id}"><span>0${i + 1}</span>${story.label}${icon("arrow")}</a>`).join("")}</nav><div class="feature-story-list">${stories.map((story, i) => `<article class="feature-story" id="feature-${story.id}"><div class="feature-copy"><div class="eyebrow">0${i + 1} / ${story.kicker}</div><h3>${story.title}</h3><p class="feature-description">${story.description}</p><ul class="feature-points">${story.points.map(([title, text]) => `<li><b>${title}</b><p>${text}</p></li>`).join("")}</ul><a class="text-link" href="${href(`guides/${story.guide}/`)}">${story.guideLabel}${icon("arrow")}</a></div><figure class="feature-visual"><div class="feature-art art-${story.visual}" role="img" aria-label="${e(story.title + "；" + story.caption)}"><div class="visual-ui" aria-hidden="true">${featureVisual(story.visual, { landscape, icon })}</div></div><figcaption>${story.caption}</figcaption></figure></article>`).join("")}</div></section>`;
+}
+
 function guideCard(g, compact = false) {
   const p = products.find((p) => p.id === g.product);
   return `<a class="guide-card ${compact ? "compact" : ""}" href="${href(`guides/${g.slug}/`)}" data-guide data-product="${g.product}" data-search="${e(`${g.title} ${g.description} ${g.category} ${p?.name || ""} ${p?.english || ""}`.toLowerCase())}"><div class="guide-meta"><span>${p ? p.name : "通用指南"} <i>/</i> ${g.category}</span><span>${g.minutes} 分钟</span></div><h3>${g.title}${icon("arrow")}</h3><p>${g.description}</p><span class="guide-read">阅读指南 ${icon("arrow")}</span></a>`;
@@ -196,7 +210,7 @@ await page("", {
   nav: "home",
   body: `${showcase()}
 <section class="software-section shell" id="software"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION <span>/ 01—02</span></div><h2>为两种日常，认真做的软件。</h2></div><p>让工具回归简单，<br>把时间留给真正重要的事。</p></div>
-<div class="product-grid">${products.map((p) => `<article class="product-card ${p.color}"><div class="product-card-top">${appIcon(p)}<span class="product-number">${p.number} <i>/</i> ${p.category}</span></div><div class="product-heading"><h3>${p.name}</h3><span>${p.english}</span></div><p class="product-tagline">${p.tagline}</p><div class="product-preview">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div><p class="product-description">${p.description}</p><div class="product-platforms">${platform(p)}<span class="version-label">${e(releaseFor(p)?.tag || "")} 正式版</span></div><div class="product-card-bottom">${button("了解软件", href(`software/${p.id}/`), "light")}<a class="text-link" href="${href(`downloads/?software=${p.id}`)}">免费下载 ${icon("download")}</a></div></article>`).join("")}</div></section>
+<div class="product-grid">${products.map((p) => `<article class="product-card ${p.color}"><div class="product-card-top">${appIcon(p)}<span class="product-number">${p.number} <i>/</i> ${p.category}</span></div><div class="product-heading"><h3>${p.name}</h3><span>${p.english}</span></div><p class="product-tagline">${p.tagline}</p><div class="product-preview">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div><p class="product-description">${p.description}</p>${featureShortcuts(p)}<div class="product-platforms">${platform(p)}<span class="version-label">${e(releaseFor(p)?.tag || "")} 正式版</span></div><div class="product-card-bottom">${button("了解软件", href(`software/${p.id}/`), "light")}<a class="text-link" href="${href(`downloads/?software=${p.id}`)}">免费下载 ${icon("download")}</a></div></article>`).join("")}</div></section>
 <section class="principles shell"><div class="principle-intro"><span class="eyebrow">LESS FRICTION, MORE LIFE</span><h2>恰到好处，<br>就很好。</h2></div><div>${icon("document")}<h3>从你的日常出发</h3><p>围绕真实的使用场景，让整理、准备与回顾更顺手。</p></div><div>${icon("shield")}<h3>数据的选择权在你</h3><p>应用资料优先存放在本机，联网与同步的边界清晰可见。</p></div><div>${icon("code")}<h3>开放，也持续改进</h3><p>源码与更新记录公开，欢迎带着具体问题和想法一起打磨。</p></div></section>
 <section class="guides-section shell"><div class="section-heading"><div><div class="eyebrow">A LITTLE GUIDANCE</div><h2>从第一次打开，到用得顺手。</h2></div><a class="text-link" href="${href("guides/")}">全部使用教程 ${icon("arrow")}</a></div><div class="guides-grid">${[guides[0], guides[5], guides[3]].map((g) => guideCard(g, true)).join("")}</div></section>
 <section class="closing-section shell"><div><span class="eyebrow">GOOD TO HAVE YOU HERE</span><h2>下一步，从一个小工具开始。</h2><p>选一款适合你的软件，试着让今天更轻松一点。</p></div>${button("前往下载中心", href("downloads/"), "primary")}</section>`,
@@ -211,8 +225,7 @@ for (const p of products) {
     nav: "home",
     extra: `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: `${p.name} ${p.english}`, operatingSystem: p.platforms.join(", "), applicationCategory: p.id === "haruphoto" ? "MultimediaApplication" : "BusinessApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, softwareVersion: release?.tag, url: site.origin + href(`software/${p.id}/`) }).replaceAll("<", "\\u003c")}</script>`,
     body: `<section class="product-hero shell ${p.color}"><a class="breadcrumb" href="${href("")}">软件集 ${icon("arrow")} ${p.name}</a><div class="product-hero-grid"><div><div class="app-identity">${appIcon(p)}<div><div class="eyebrow">${p.category}</div><h1>${p.name}<small>${p.english}</small></h1></div></div><h2>${p.tagline}</h2><p>${p.description}</p><div class="hero-actions">${button("免费下载", href(`downloads/?software=${p.id}`), "primary")}<a class="text-link" href="${href(`guides/?software=${p.id}`)}">使用教程 ${icon("book")}</a></div><div class="product-platforms">${platform(p)}<span>${e(release?.tag)} 正式版</span></div><p class="requirements">${p.requirements}</p></div><div class="detail-preview">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div></div></section>
-${showcase(p)}
-<section class="shell detail-features"><div class="section-heading"><div><div class="eyebrow">MADE FOR YOUR EVERYDAY</div><h2>${p.summary}</h2></div><p class="detail-description">${p.detail}</p></div><div class="feature-grid">${p.features.map((f) => `<article>${icon(f.icon)}<h3>${f.title}</h3><p>${f.text}</p></article>`).join("")}</div></section>
+${illustratedFeatures(p)}
 <section class="shell getting-started"><div><span class="eyebrow">YOUR FIRST STEPS</span><h2>打开它，然后开始。</h2><p>不用先注册本站账号，下载后即可开始使用。</p></div><ol>${p.steps.map((s, i) => `<li><span>0${i + 1}</span>${s}</li>`).join("")}</ol></section>
 <section class="shell product-notes"><h2>使用前，了解这些细节。</h2><ul>${p.notes.map((n) => `<li>${n}</li>`).join("")}</ul><a class="text-link" href="${sourceLink(p)}" target="_blank" rel="noopener noreferrer">查看项目源码与完整说明 ${icon("external")}</a></section>
 <section class="shell guides-section"><div class="section-heading"><h2>让上手再简单一点。</h2><a class="text-link" href="${href(`guides/?software=${p.id}`)}">全部教程 ${icon("arrow")}</a></div><div class="guides-grid">${related.map((g) => guideCard(g, true)).join("")}</div></section>`,
