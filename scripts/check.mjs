@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { products, site } from "../content/products.mjs";
@@ -20,6 +20,17 @@ async function walk(dir) {
 }
 await walk(root);
 let checkedLinks = 0;
+const iconBytes =
+  (await stat(path.join(root, "assets/resume-studio.png"))).size +
+  (await stat(path.join(root, "assets/haruphoto.png"))).size;
+assert(
+  iconBytes < 120000,
+  `App icons exceed 120 KB performance budget: ${iconBytes}`,
+);
+assert(
+  (await stat(path.join(root, "assets/app.js"))).size < 30000,
+  "Client script exceeds 30 KB performance budget",
+);
 const decode = (s) =>
   s.replaceAll("&amp;", "&").replaceAll("&#39;", "'").replaceAll("&quot;", '"');
 for (const file of files.filter((f) => f.endsWith(".html"))) {
@@ -27,6 +38,16 @@ for (const file of files.filter((f) => f.endsWith(".html"))) {
   assert.match(html, /<html lang="zh-CN">/, file);
   assert.match(html, /<title>.+<\/title>/, file);
   assert.match(html, /<meta name="description" content="[^"]+">/, file);
+  assert.match(
+    html,
+    /<meta name="haru-build" content="[a-f0-9]{12}">/,
+    `Missing deployment identity: ${file}`,
+  );
+  assert.match(
+    html,
+    /assets\/app\.js\?v=[a-f0-9]{12}/,
+    `Missing cache version: ${file}`,
+  );
   assert.equal(
     (html.match(/<h1[ >]/g) || []).length,
     1,
