@@ -92,3 +92,7 @@ Haruphoto：`scj040921/haruphoto` 的 README、v1.3.8 发行说明、更新通�
 两款软件各有四组功能图解，内容维护于 `content/feature-stories.mjs`，图解由 `scripts/feature-visuals.mjs` 输出，样式位于 `assets/features.css`。首页功能入口直达对应介绍，配图明确标注示意与虚构内容，不包含私人照片或简历。
 
 Haruphoto 图标已采用官方提交 `62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b` 的 `Assets/AppIcon.png`（256 × 256，45,388 字节），SHA-256 为 `D5E7FB53B2F463E0FB05EF9F6B8C8CAC92643530DEB87DD516B094C112CD12FB`。
+
+## 分平台发行同步（2026-10-21）
+
+同步现在保留同一通道下分别发布的 Windows 与 Android 最新发行，使用各自的官方发行页、文件名及校验摘要。下载筛选仍按 Stable / Nightly 和平台区分，不会把新版测试包当正式版。构建检查包含分平台发行回归用例。

@@ -54,7 +54,26 @@ export function selectReleases(releases, repo) {
             }),
         }
       : null;
+  // Platforms may ship in separate releases; retain each platform's newest channel build.
+  const supplemental = [];
+  for (const prerelease of [false, true]) {
+    const primary = valid.find((r) => r.prerelease === prerelease);
+    for (const pattern of [/\.apk$/i, /Setup.*\.exe$/i]) {
+      const latest = valid.find(
+        (r) =>
+          r.prerelease === prerelease &&
+          r.assets.some((a) => pattern.test(a.name)),
+      );
+      if (
+        latest &&
+        latest !== primary &&
+        !supplemental.some((r) => r.tag === latest.tag_name)
+      )
+        supplemental.push(normalize(latest));
+    }
+  }
   return {
+    supplemental,
     stable: normalize(valid.find((r) => !r.prerelease)),
     nightly: normalize(valid.find((r) => r.prerelease)),
     history: valid

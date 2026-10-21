@@ -103,8 +103,12 @@ for (const file of files.filter((f) => f.endsWith(".html"))) {
 }
 for (const p of products) {
   assert(snapshot.products[p.id].stable, `Stable missing: ${p.id}`);
-  for (const channel of ["stable", "nightly"]) {
-    const release = snapshot.products[p.id][channel];
+  for (const release of [
+    snapshot.products[p.id].stable,
+    snapshot.products[p.id].nightly,
+    ...(snapshot.products[p.id].supplemental || []),
+  ]) {
+    const channel = release?.channel;
     if (!release) continue;
     assert.equal(release.channel, channel);
     assert(
@@ -147,6 +151,15 @@ const selected = selectReleases(
 assert.equal(selected.nightly.tag, "nightly-new");
 assert.equal(selected.stable.tag, "v2");
 assert.equal(selected.history.length, 2);
+const splitAndroid = make("android-new", "2026-10-16T00:00:00Z", true);
+splitAndroid.assets[0].name = "app.apk";
+const split = selectReleases(
+  [make("desktop-new", "2026-10-17T00:00:00Z", true), splitAndroid],
+  "test/repo",
+);
+assert.equal(split.nightly.tag, "desktop-new");
+assert.equal(split.supplemental[0].tag, "android-new");
+
 assert.equal(guides.length, 10);
 console.log(
   `PASS: ${files.filter((f) => f.endsWith(".html")).length} HTML pages; ${checkedLinks} local links/anchors; 10 guides; release provenance, checksums, and Stable/Nightly sorting.`,

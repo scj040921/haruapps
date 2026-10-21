@@ -1,7 +1,25 @@
 {
-  "checkedAt": "2026-10-15T06:44:55.282Z",
+  "checkedAt": "2026-10-21T08:19:40.184Z",
   "products": {
     "resume-studio": {
+      "supplemental": [
+        {
+          "tag": "android-nightly-20261021-6162d77d",
+          "name": "拾简 Android 0.9.13-nightly.20261021.6162d77d",
+          "channel": "nightly",
+          "published": "2026-10-21T08:10:48Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/android-nightly-20261021-6162d77d",
+          "body": "Android 0.9.13-nightly.20261021.6162d77d\n\n\n\n仅更新安卓端，桌面更新通道保持独立。\n\n# Android v0.9.13\r\n\r\n- 新增“我的简历 → 从 PDF 导入”，支持文字型和扫描件简历，核对后选择模板生成新的简历记录。\r\n- 扫描页面使用随包提供的中英文识别模型，在本机完成 OCR，首次使用无需下载模型或登录 Google 服务。\r\n- 联系方式和经历模块沿用与桌面一致的归类规则，未归类文字保留供核对；原 PDF 不入库，旧简历不覆盖。\r\n- 为保留 ARM／x86 的 32／64 位设备兼容性，APK 增加本地 OCR 库和模型。照片可在导入后手动添加，扫描文字、数字和日期需人工核对。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.13-nightly.20261021.6162d77d.apk",
+              "size": 31701292,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/android-nightly-20261021-6162d77d/ResumeStudio-Android-v0.9.13-nightly.20261021.6162d77d.apk",
+              "sha256": "4b1324192e88a7a3d697e0750776c24b8a355b141aed48e56af886d85e9b8b76"
+            }
+          ]
+        }
+      ],
       "stable": {
         "tag": "v0.9.6",
         "name": "拾简 Stable v0.9.6",
@@ -37,36 +55,30 @@
         ]
       },
       "nightly": {
-        "tag": "nightly-20261015-101c38ec",
-        "name": "拾简 Nightly nightly-20261015-101c38ec",
+        "tag": "nightly-20261021-6162d77d",
+        "name": "拾简 Nightly nightly-20261021-6162d77d",
         "channel": "nightly",
-        "published": "2026-10-15T06:11:26Z",
-        "url": "https://github.com/scj040921/resume-studio/releases/tag/nightly-20261015-101c38ec",
-        "body": "Nightly 每日测试版，可能包含尚未稳定的改动。\n\n源码提交：101c38ec0d2e944c056ea282b29a1709d5ebfef9",
+        "published": "2026-10-21T08:15:44Z",
+        "url": "https://github.com/scj040921/resume-studio/releases/tag/nightly-20261021-6162d77d",
+        "body": "Nightly 每日测试版，可能包含尚未稳定的改动。\n\n源码提交：6162d77d912070ca75feb78f58095a825edeebd0",
         "assets": [
           {
-            "name": "ResumeStudio-Android-v0.9.6-nightly.20261015.101c38ec.apk",
-            "size": 8226875,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-Android-v0.9.6-nightly.20261015.101c38ec.apk",
-            "sha256": "08e2aff3b09e6600c1e8ffc1cc1074578a0f8b50816e87941844d7fd64efe62b"
+            "name": "ResumeStudio-v0.9.11-nightly.20261021.6162d77d-Setup-x64.exe",
+            "size": 54727893,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/ResumeStudio-v0.9.11-nightly.20261021.6162d77d-Setup-x64.exe",
+            "sha256": "bdc68a25b57465b4a58f2fee96d59ac7c6c38bce96539a45d762137bde87f4fa"
           },
           {
-            "name": "ResumeStudio-v0.9.6-nightly.20261015.101c38ec-Setup-x64.exe",
-            "size": 54584124,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-v0.9.6-nightly.20261015.101c38ec-Setup-x64.exe",
-            "sha256": "4a696ba0819abedf844449173a011ce3a84ea006c2a0ef9ad5508f113444b39f"
-          },
-          {
-            "name": "ResumeStudio-v0.9.6-nightly.20261015.101c38ec-windows-x64.zip",
-            "size": 70104118,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/ResumeStudio-v0.9.6-nightly.20261015.101c38ec-windows-x64.zip",
-            "sha256": "f098e9efc20b7d79b7b3538943e0a48c5d8457aecfb8a0ca0f41eafd7d7492d8"
+            "name": "ResumeStudio-v0.9.11-nightly.20261021.6162d77d-windows-x64.zip",
+            "size": 70301835,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/ResumeStudio-v0.9.11-nightly.20261021.6162d77d-windows-x64.zip",
+            "sha256": "d8fe2e7be92b0bb09e3249ca13dfce557ac8a2a68c8d4e29df9c2a3aa1d24aa4"
           },
           {
             "name": "SHA256SUMS.txt",
-            "size": 622,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261015-101c38ec/SHA256SUMS.txt",
-            "sha256": "c05abe556048d8f50d027b421f4786b4f2ffc55165ab63656e2ed77b07991236"
+            "size": 624,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/SHA256SUMS.txt",
+            "sha256": "51153313335fce5c5a23fbe1514974c772904dc8ada9adcde403e88b9233188a"
           }
         ]
       },
@@ -232,63 +244,92 @@
       ]
     },
     "haruphoto": {
+      "supplemental": [],
       "stable": {
-        "tag": "v1.3.8",
-        "name": "haruphoto 1.3.8 Stable · v1.3.8",
+        "tag": "v1.3.9",
+        "name": "haruphoto 1.3.9 Stable · v1.3.9",
         "channel": "stable",
-        "published": "2026-10-14T07:38:16Z",
-        "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.8",
-        "body": "Source commit: 3c70374aba7caf7f452b3745323907a23a1b09cb\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n### 新功能\r\n\r\n- 地图相册可按需搜索地名。按回车或点击搜索提交，不会自动联想；搜索结果优先使用简体中文名称。选择结果可直接定位，放置照片时可把预览中的照片批次放到该地点。\r\n- 搜索地点会把输入的地名发送给 OpenStreetMap Nominatim；照片、地点记录和批注仍只保存在本机。\r\n- 地图操作界面和归属说明统一为简体中文。\r\n\r\n### 地图文字说明\r\n\r\n当前底图由 OpenStreetMap PNG 图块提供，图中文字已由底图服务渲染，无法在客户端强制翻译。地点搜索结果及应用界面使用简体中文；底图地名仍按图块实际包含的语言显示。\r\n\r\n### 安装\r\n\r\n安装版下载 `haruphoto-v1.3.8-Setup.exe`；便携版完整解压 `haruphoto-v1.3.8-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "published": "2026-10-15T07:26:19Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.9",
+        "body": "Source commit: 62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.9 · 黑白品牌图标\r\n\r\n- 全面更新为黑白 Logo：将 Haruphoto 的 H 与相机轮廓、镜头结合，采用统一线条与留白。\r\n- 同步桌面快捷方式、任务栏、窗口图标、安装器、启动画面与仓库 README 图标。\r\n- 提供 16–1024 像素图标和多尺寸 ICO，并修正 Windows 各类图标资源的输出尺寸。\r\n- 保存确认后的原始设计及资源生成脚本，方便后续维护。\r\n\r\n安装版下载 `haruphoto-v1.3.9-Setup.exe`；便携版完整解压 `haruphoto-v1.3.9-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
         "assets": [
           {
-            "name": "haruphoto-v1.3.8-portable.zip",
-            "size": 90438974,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-portable.zip",
-            "sha256": "10d11d6f1528d97ab23982379824bef4ceb8fa99f66b786f97054668bc71fc92"
+            "name": "haruphoto-v1.3.9-portable.zip",
+            "size": 92110109,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-portable.zip",
+            "sha256": "2ac4af6b568ab1bf81bafb880f87c912c102b0396d898447b03b98001d32a8c3"
           },
           {
-            "name": "haruphoto-v1.3.8-Setup.exe",
-            "size": 162223742,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/haruphoto-v1.3.8-Setup.exe",
-            "sha256": "d47df02ad21362ddf8cea0fb989511b181d56f8d7d3c37261a2b18689908d594"
+            "name": "haruphoto-v1.3.9-Setup.exe",
+            "size": 163837566,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-Setup.exe",
+            "sha256": "7ddf37ebc1fa128d8f59a34eea6ad49de307554b67fc1d6dee89c422a2eafe45"
           },
           {
             "name": "SHA256SUMS.txt",
             "size": 270,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.8/SHA256SUMS.txt",
-            "sha256": "72a81beef4a63d0c9af9f48f493309cfdbd8666a2a3dfbc0af2bf2f57d5910ac"
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/SHA256SUMS.txt",
+            "sha256": "1a0a55ffa840de2143c59b65dfefe2e6501f9158c8b9eda546024ba2670f7293"
           }
         ]
       },
       "nightly": {
-        "tag": "nightly-20261014-18",
-        "name": "haruphoto 1.3.8 Nightly · nightly-20261014-18",
+        "tag": "nightly-20261015-21",
+        "name": "haruphoto 1.3.9 Nightly · nightly-20261015-21",
         "channel": "nightly",
-        "published": "2026-10-14T07:42:43Z",
-        "url": "https://github.com/scj040921/haruphoto/releases/tag/nightly-20261014-18",
-        "body": "Source commit: 3c70374aba7caf7f452b3745323907a23a1b09cb\n\nNightly 每日测试版：根据当前远端源码构建，可能不稳定。可在设置中切回 Stable。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n### 新功能\r\n\r\n- 地图相册可按需搜索地名。按回车或点击搜索提交，不会自动联想；搜索结果优先使用简体中文名称。选择结果可直接定位，放置照片时可把预览中的照片批次放到该地点。\r\n- 搜索地点会把输入的地名发送给 OpenStreetMap Nominatim；照片、地点记录和批注仍只保存在本机。\r\n- 地图操作界面和归属说明统一为简体中文。\r\n\r\n### 地图文字说明\r\n\r\n当前底图由 OpenStreetMap PNG 图块提供，图中文字已由底图服务渲染，无法在客户端强制翻译。地点搜索结果及应用界面使用简体中文；底图地名仍按图块实际包含的语言显示。\r\n\r\n### 安装\r\n\r\n安装版下载 `haruphoto-v1.3.8-Setup.exe`；便携版完整解压 `haruphoto-v1.3.8-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "published": "2026-10-15T07:22:38Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/nightly-20261015-21",
+        "body": "Source commit: 62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b\n\nNightly 每日测试版：根据当前远端源码构建，可能不稳定。可在设置中切回 Stable。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.9 · 黑白品牌图标\r\n\r\n- 全面更新为黑白 Logo：将 Haruphoto 的 H 与相机轮廓、镜头结合，采用统一线条与留白。\r\n- 同步桌面快捷方式、任务栏、窗口图标、安装器、启动画面与仓库 README 图标。\r\n- 提供 16–1024 像素图标和多尺寸 ICO，并修正 Windows 各类图标资源的输出尺寸。\r\n- 保存确认后的原始设计及资源生成脚本，方便后续维护。\r\n\r\n安装版下载 `haruphoto-v1.3.9-Setup.exe`；便携版完整解压 `haruphoto-v1.3.9-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
         "assets": [
           {
-            "name": "haruphoto-nightly-20261014-18-portable.zip",
-            "size": 90438940,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/haruphoto-nightly-20261014-18-portable.zip",
-            "sha256": "f9869cb399ec07a604ca3db8d56b81a0bd21b224b6094d66b2bd89bca6b656d6"
+            "name": "haruphoto-nightly-20261015-21-portable.zip",
+            "size": 92110143,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/haruphoto-nightly-20261015-21-portable.zip",
+            "sha256": "3cff71befc0d733d012f0f58c5f029a4f78e5236aa824e527781e09661a673a5"
           },
           {
-            "name": "haruphoto-nightly-20261014-18-Setup.exe",
-            "size": 162223742,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/haruphoto-nightly-20261014-18-Setup.exe",
-            "sha256": "68569709da378880cefa1c3748c2c1d33afa680283a638487622b5fd77795eec"
+            "name": "haruphoto-nightly-20261015-21-Setup.exe",
+            "size": 163837566,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/haruphoto-nightly-20261015-21-Setup.exe",
+            "sha256": "8ec5337e26f6c37266945f9adfaf4002f60b9184ed4a2e9ec1a14c679c47c78b"
           },
           {
             "name": "SHA256SUMS.txt",
             "size": 296,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261014-18/SHA256SUMS.txt",
-            "sha256": "ac1782367993f45006742c2640b1c544abf4142b9b5d71bad5e2f6d6fa94c05e"
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/SHA256SUMS.txt",
+            "sha256": "d7ff848ce1f3685195bd913dc670f6280bf64a0492464fd4ecfe42c966efb5fc"
           }
         ]
       },
       "history": [
+        {
+          "tag": "v1.3.9",
+          "name": "haruphoto 1.3.9 Stable · v1.3.9",
+          "channel": "stable",
+          "published": "2026-10-15T07:26:19Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.9",
+          "body": "Source commit: 62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.9 · 黑白品牌图标\r\n\r\n- 全面更新为黑白 Logo：将 Haruphoto 的 H 与相机轮廓、镜头结合，采用统一线条与留白。\r\n- 同步桌面快捷方式、任务栏、窗口图标、安装器、启动画面与仓库 README 图标。\r\n- 提供 16–1024 像素图标和多尺寸 ICO，并修正 Windows 各类图标资源的输出尺寸。\r\n- 保存确认后的原始设计及资源生成脚本，方便后续维护。\r\n\r\n安装版下载 `haruphoto-v1.3.9-Setup.exe`；便携版完整解压 `haruphoto-v1.3.9-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.9-portable.zip",
+              "size": 92110109,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-portable.zip",
+              "sha256": "2ac4af6b568ab1bf81bafb880f87c912c102b0396d898447b03b98001d32a8c3"
+            },
+            {
+              "name": "haruphoto-v1.3.9-Setup.exe",
+              "size": 163837566,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-Setup.exe",
+              "sha256": "7ddf37ebc1fa128d8f59a34eea6ad49de307554b67fc1d6dee89c422a2eafe45"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 270,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/SHA256SUMS.txt",
+              "sha256": "1a0a55ffa840de2143c59b65dfefe2e6501f9158c8b9eda546024ba2670f7293"
+            }
+          ]
+        },
         {
           "tag": "v1.3.8",
           "name": "haruphoto 1.3.8 Stable · v1.3.8",
@@ -398,22 +439,6 @@
               "size": 270,
               "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/SHA256SUMS.txt",
               "sha256": "6766b30806ca38d80ce458d7196d194123edbfadcb84ca2912dd9f23f9a27c86"
-            }
-          ]
-        },
-        {
-          "tag": "v1.2.0",
-          "name": "haruphoto v1.2.0",
-          "channel": "stable",
-          "published": "2026-08-22T07:18:11Z",
-          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.2.0",
-          "body": "## v1.2.0\\n\\n- 移除批量操作栏中重复的「收藏」按钮\\n- 将批量「分类」入口改名为「常用操作」\\n- 修复胶片预览横向滚动条无法拖动的问题\\n- 增加左侧固定「检查更新」入口\\n- 完善 GitHub Release 正式版发布与自动更新流程\\n\\nSHA-256: F36F1DF37E7F657599BB2883BE95BB20A1265F77CE6A70370BE07AC7039157CF",
-          "assets": [
-            {
-              "name": "haruphoto-v1.2.0-portable.zip",
-              "size": 53794106,
-              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.2.0/haruphoto-v1.2.0-portable.zip",
-              "sha256": "3436e23bd8801ec2740ac0e1161ee453526082793137bf4d393bd3601a6ca0ea"
             }
           ]
         }

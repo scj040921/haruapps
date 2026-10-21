@@ -241,8 +241,7 @@ function assetKind(asset) {
   return null;
 }
 
-function downloadCard(p, channel) {
-  const r = releaseFor(p, channel);
+function downloadCard(p, channel, r = releaseFor(p, channel)) {
   if (!r) return "";
   const priority = (a) =>
     /Setup.*\.exe$/i.test(a.name) ? 0 : /\.zip$/i.test(a.name) ? 1 : 2;
@@ -287,7 +286,7 @@ await page("downloads/", {
     )
     .join(
       "",
-    )}</div></div></div><div class="notice nightly-notice" hidden><strong>你正在浏览 Nightly 测试版。</strong>可能存在尚未解决的问题，建议先备份资料。日常使用优先选择正式版。</div><p class="results-summary" role="status" aria-live="polite" data-results></p><div class="download-list">${products.map((p) => ["stable", "nightly"].map((c) => downloadCard(p, c)).join("")).join("")}</div><div class="empty-state" data-empty hidden>${icon("search")}<h2>这个组合暂时没有安装包</h2><p>Haruphoto 目前仅支持 Windows。可切换平台，或选择拾简 Android 版。</p><button class="button primary" type="button" data-reset>查看全部正式版</button></div><p class="snapshot-time">版本信息核对于 ${date(releases.checkedAt)} · <a href="https://github.com/scj040921/haruapps/actions/workflows/deploy.yml" target="_blank" rel="noopener noreferrer">查看网站更新状态 ${icon("external")}</a></p></div><aside class="download-aside"><div class="aside-note"><span class="eyebrow">FIRST TIME HERE?</span><h2>第一次下载？</h2><ol><li><b>优先选择正式版</b><p>适合日常使用的 Stable 通道。</p></li><li><b>Windows 推荐安装版</b><p>双击 Setup.exe 即可安装，无需自己配置开发环境。</p></li><li><b>Android 选择 APK</b><p>拾简支持 Android 8.0 及以上。</p></li></ol><a class="text-link" href="${href("guides/channels-downloads/")}">下载与校验指南 ${icon("arrow")}</a></div><div class="aside-plain"><h3>下载遇到问题？</h3><p>文件通过 GitHub 提供，速度取决于网络。可以打开对应版本的官方发行页重试。</p><p>Haruphoto 安装器尚未商业签名；出现提示时先核对来源与校验值。</p><a class="text-link" href="${href("about/#feedback")}">反馈问题 ${icon("arrow")}</a></div></aside></section><noscript><p class="shell notice">筛选需要启用 JavaScript；下面的默认列表已提供两款软件的正式版下载。Nightly 可从各项目官方发行页面获取。</p></noscript>`,
+    )}</div></div></div><div class="notice nightly-notice" hidden><strong>你正在浏览 Nightly 测试版。</strong>可能存在尚未解决的问题，建议先备份资料。日常使用优先选择正式版。</div><p class="results-summary" role="status" aria-live="polite" data-results></p><div class="download-list">${products.map((p) => [...["stable", "nightly"].map((c) => downloadCard(p, c)), ...(releases.products[p.id].supplemental || []).map((r) => downloadCard(p, r.channel, r))].join("")).join("")}</div><div class="empty-state" data-empty hidden>${icon("search")}<h2>这个组合暂时没有安装包</h2><p>Haruphoto 目前仅支持 Windows。可切换平台，或选择拾简 Android 版。</p><button class="button primary" type="button" data-reset>查看全部正式版</button></div><p class="snapshot-time">版本信息核对于 ${date(releases.checkedAt)} · <a href="https://github.com/scj040921/haruapps/actions/workflows/deploy.yml" target="_blank" rel="noopener noreferrer">查看网站更新状态 ${icon("external")}</a></p></div><aside class="download-aside"><div class="aside-note"><span class="eyebrow">FIRST TIME HERE?</span><h2>第一次下载？</h2><ol><li><b>优先选择正式版</b><p>适合日常使用的 Stable 通道。</p></li><li><b>Windows 推荐安装版</b><p>双击 Setup.exe 即可安装，无需自己配置开发环境。</p></li><li><b>Android 选择 APK</b><p>拾简支持 Android 8.0 及以上。</p></li></ol><a class="text-link" href="${href("guides/channels-downloads/")}">下载与校验指南 ${icon("arrow")}</a></div><div class="aside-plain"><h3>下载遇到问题？</h3><p>文件通过 GitHub 提供，速度取决于网络。可以打开对应版本的官方发行页重试。</p><p>Haruphoto 安装器尚未商业签名；出现提示时先核对来源与校验值。</p><a class="text-link" href="${href("about/#feedback")}">反馈问题 ${icon("arrow")}</a></div></aside></section><noscript><p class="shell notice">筛选需要启用 JavaScript；下面的默认列表已提供两款软件的正式版下载。Nightly 可从各项目官方发行页面获取。</p></noscript>`,
 });
 
 await page("guides/", {
