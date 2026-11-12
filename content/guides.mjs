@@ -398,4 +398,26 @@ export const guides = [
       },
     ],
   },
+  {
+    slug: "harumusic-install",
+    product: "harumusic",
+    category: "开始使用",
+    title: "安装并开始使用 HaruMusic",
+    description: "下载 Windows 版，开始浏览和播放音乐。",
+    minutes: 3,
+    sections: [
+      {
+        title: "安装 Windows 版",
+        paragraphs: [
+          "从下载中心选择 HaruMusic 的 Windows 安装包，下载后打开并按提示安装。",
+        ],
+        steps: [
+          "在下载中心选择 HaruMusic 和正式版。",
+          "下载 Windows 安装包，打开并完成安装。",
+          "启动 HaruMusic，浏览音乐并调整播放设置。",
+        ],
+        tip: "请核对发行页面和文件摘要。",
+      },
+    ],
+  },
 ];

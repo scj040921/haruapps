@@ -160,7 +160,7 @@ const split = selectReleases(
 assert.equal(split.nightly.tag, "desktop-new");
 assert.equal(split.supplemental[0].tag, "android-new");
 
-assert.equal(guides.length, 10);
+assert.equal(guides.length, 11);
 console.log(
-  `PASS: ${files.filter((f) => f.endsWith(".html")).length} HTML pages; ${checkedLinks} local links/anchors; 10 guides; release provenance, checksums, and Stable/Nightly sorting.`,
+  `PASS: ${files.filter((f) => f.endsWith(".html")).length} HTML pages; ${checkedLinks} local links/anchors; 11 guides; release provenance, checksums, and Stable/Nightly sorting.`,
 );

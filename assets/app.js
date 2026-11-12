@@ -20,7 +20,7 @@
     if (!filters) return;
     const scope = filters.dataset.filterScope;
     const allowed = {
-      software: ["all", "resume-studio", "haruphoto"],
+      software: ["all", "resume-studio", "haruphoto", "harumusic"],
       channel: ["stable", "nightly"],
       platform: ["all", "windows", "android"],
     };

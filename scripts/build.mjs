@@ -38,6 +38,7 @@ const versions = Object.fromEntries(
       "app.js",
       "resume-studio.png",
       "haruphoto.png",
+      "harumusic.png",
     ].map(async (name) => [
       name,
       createHash("sha256")
@@ -179,18 +180,21 @@ function photoPreview() {
   return `<div class="app-window photo-window" aria-label="Haruphoto 界面示意，使用原创风景插画"><div class="window-chrome"><span class="traffic"><i></i><i></i><i></i></span><span>Haruphoto</span><span>─ &nbsp; □ &nbsp; ×</span></div><div class="photo-ui"><div class="photo-toolbar"><span><b>每一个，值得珍藏的日常。</b><small>我的图库 <em> / </em> 旅行与生活</small></span><span class="mock-photo-icons">${icon("search")}${icon("grid")}${icon("heart")}</span></div><div class="photo-gallery">${Array.from({ length: 6 }, (_, i) => `<div class="photo-cell photo-${i}">${landscape(i)}${i === 0 ? "<span>♡</span>" : ""}</div>`).join("")}</div><div class="mock-caption"><span>山海之间 · 示例相册</span><span>界面示意 · 原创插画</span></div></div></div>`;
 }
 
+function musicPreview() {
+  return `<div class="music-preview" aria-label="音乐播放器示意图"><div class="music-cover">♪</div><div><small>HARUMUSIC · 播放示意</small><h3>让音乐陪伴此刻</h3><p>你的音乐，你的节奏</p><div class="music-progress"></div><span>◀　Ⅱ　▶</span></div></div>`;
+}
 function showcase(product) {
-  const collection = product ? [product] : products;
+  const collection = product ? [product] : products.slice(0, 2);
   const title = product
     ? product.id === "resume-studio"
       ? "下一次机会，<br>从容以赴。"
       : "把时间，留给<br>好好看照片。"
     : "专注热爱的事。<br>其余，交给好工具。";
-  return `<section class="story-stage ${product ? "story-single" : "story-home"}" data-story aria-label="产品动态展示"><div class="story-inner"><div class="story-heading"><div class="eyebrow">IN FOCUS / 为日常，多想一步</div><${product ? "h2" : "h1"}>${title}</${product ? "h2" : "h1"}><p>从一次认真准备，到一段值得回味的生活。<br>让工具安静地陪你，把每一件小事做好。</p>${collection.length > 1 ? `<div class="story-controls" role="group" aria-label="选择展示的软件">${collection.map((p, i) => `<button type="button" data-scene="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${p.name}${icon("arrow")}</button>`).join("")}</div>` : `<a class="story-action" href="${href(`downloads/?software=${product.id}`)}">开始使用 ${product.name}${icon("arrow")}</a>`}${product ? "" : `<a class="story-browse" href="#software">浏览全部软件 ${icon("arrow")}</a>`}</div><div class="story-canvas">${collection.map((p, i) => `<figure class="story-scene ${p.id === "haruphoto" ? "scene-photo" : "scene-resume"} ${i === 0 ? "is-current" : ""}"><div class="story-scene-label">${appIcon(p)}<span>${p.name}<small>${p.id === "haruphoto" ? "整理 · 欣赏 · 重温" : "简历 · 求职 · 面试"}</small></span><span class="story-platform">${p.platforms.join(" / ")}</span></div><div class="story-window">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div><figcaption><b>${p.summary}</b><span>${p.id === "resume-studio" ? "多端准备，资料由你掌握。" : "在自己的图库，重新发现日常。"}</span><a href="${href(`software/${p.id}/`)}">了解 ${p.name}${icon("arrow")}</a></figcaption></figure>`).join("")}</div></div></section>`;
+  return `<section class="story-stage ${product ? "story-single" : "story-home"}" data-story aria-label="产品动态展示"><div class="story-inner"><div class="story-heading"><div class="eyebrow">IN FOCUS / 为日常，多想一步</div><${product ? "h2" : "h1"}>${title}</${product ? "h2" : "h1"}><p>从一次认真准备，到一段值得回味的生活。<br>让工具安静地陪你，把每一件小事做好。</p>${collection.length > 1 ? `<div class="story-controls" role="group" aria-label="选择展示的软件">${collection.map((p, i) => `<button type="button" data-scene="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${p.name}${icon("arrow")}</button>`).join("")}</div>` : `<a class="story-action" href="${href(`downloads/?software=${product.id}`)}">开始使用 ${product.name}${icon("arrow")}</a>`}${product ? "" : `<a class="story-browse" href="#software">浏览全部软件 ${icon("arrow")}</a>`}</div><div class="story-canvas">${collection.map((p, i) => `<figure class="story-scene ${p.id === "haruphoto" ? "scene-photo" : "scene-resume"} ${i === 0 ? "is-current" : ""}"><div class="story-scene-label">${appIcon(p)}<span>${p.name}<small>${p.id === "haruphoto" ? "整理 · 欣赏 · 重温" : "简历 · 求职 · 面试"}</small></span><span class="story-platform">${p.platforms.join(" / ")}</span></div><div class="story-window">${p.id === "resume-studio" ? resumePreview() : p.id === "harumusic" ? musicPreview() : photoPreview()}</div><figcaption><b>${p.summary}</b><span>${p.id === "resume-studio" ? "多端准备，资料由你掌握。" : "在自己的图库，重新发现日常。"}</span><a href="${href(`software/${p.id}/`)}">了解 ${p.name}${icon("arrow")}</a></figcaption></figure>`).join("")}</div></div></section>`;
 }
 
 function featureShortcuts(p) {
-  return `<div class="product-shortcuts" aria-label="${p.name} 功能介绍">${featureStories[p.id].map((story) => `<a href="${href(`software/${p.id}/#feature-${story.id}`)}">${icon(story.icon)}${story.label}${icon("arrow")}</a>`).join("")}</div>`;
+  return `<div class="product-shortcuts" aria-label="${p.name} 功能介绍">${(featureStories[p.id] || []).map((story) => `<a href="${href(`software/${p.id}/#feature-${story.id}`)}">${icon(story.icon)}${story.label}${icon("arrow")}</a>`).join("")}</div>`;
 }
 
 function illustratedFeatures(p) {
@@ -206,11 +210,11 @@ function guideCard(g, compact = false) {
 await page("", {
   title: "好用的软件，让日常从容一点",
   description:
-    "发现拾简 Resume Studio 与 Haruphoto。软件介绍、Windows 与 Android 下载、使用教程和版本更新，在这里找到。",
+    "发现拾简 Resume Studio 、Haruphoto 与 HaruMusic。软件介绍、Windows 与 Android 下载、使用教程和版本更新，在这里找到。",
   nav: "home",
   body: `${showcase()}
-<section class="software-section shell" id="software"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION <span>/ 01—02</span></div><h2>为两种日常，认真做的软件。</h2></div><p>让工具回归简单，<br>把时间留给真正重要的事。</p></div>
-<div class="product-grid">${products.map((p) => `<article class="product-card ${p.color}"><div class="product-card-top">${appIcon(p)}<span class="product-number">${p.number} <i>/</i> ${p.category}</span></div><div class="product-heading"><h3>${p.name}</h3><span>${p.english}</span></div><p class="product-tagline">${p.tagline}</p><div class="product-preview">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div><p class="product-description">${p.description}</p>${featureShortcuts(p)}<div class="product-platforms">${platform(p)}<span class="version-label">${e(releaseFor(p)?.tag || "")} 正式版</span></div><div class="product-card-bottom">${button("了解软件", href(`software/${p.id}/`), "light")}<a class="text-link" href="${href(`downloads/?software=${p.id}`)}">免费下载 ${icon("download")}</a></div></article>`).join("")}</div></section>
+<section class="software-section shell" id="software"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION <span>/ 01—02</span></div><h2>为日常，认真做的软件。</h2></div><p>让工具回归简单，<br>把时间留给真正重要的事。</p></div>
+<div class="product-grid">${products.map((p) => `<article class="product-card ${p.color}"><div class="product-card-top">${appIcon(p)}<span class="product-number">${p.number} <i>/</i> ${p.category}</span></div><div class="product-heading"><h3>${p.name}</h3><span>${p.english}</span></div><p class="product-tagline">${p.tagline}</p><div class="product-preview">${p.id === "resume-studio" ? resumePreview() : p.id === "harumusic" ? musicPreview() : photoPreview()}</div><p class="product-description">${p.description}</p>${featureShortcuts(p)}<div class="product-platforms">${platform(p)}<span class="version-label">${e(releaseFor(p)?.tag || "")} 正式版</span></div><div class="product-card-bottom">${button("了解软件", href(`software/${p.id}/`), "light")}<a class="text-link" href="${href(`downloads/?software=${p.id}`)}">免费下载 ${icon("download")}</a></div></article>`).join("")}</div></section>
 <section class="principles shell"><div class="principle-intro"><span class="eyebrow">LESS FRICTION, MORE LIFE</span><h2>恰到好处，<br>就很好。</h2></div><div>${icon("document")}<h3>从你的日常出发</h3><p>围绕真实的使用场景，让整理、准备与回顾更顺手。</p></div><div>${icon("shield")}<h3>数据的选择权在你</h3><p>应用资料优先存放在本机，联网与同步的边界清晰可见。</p></div><div>${icon("code")}<h3>开放，也持续改进</h3><p>源码与更新记录公开，欢迎带着具体问题和想法一起打磨。</p></div></section>
 <section class="guides-section shell"><div class="section-heading"><div><div class="eyebrow">A LITTLE GUIDANCE</div><h2>从第一次打开，到用得顺手。</h2></div><a class="text-link" href="${href("guides/")}">全部使用教程 ${icon("arrow")}</a></div><div class="guides-grid">${[guides[0], guides[5], guides[3]].map((g) => guideCard(g, true)).join("")}</div></section>
 <section class="closing-section shell"><div><span class="eyebrow">GOOD TO HAVE YOU HERE</span><h2>下一步，从一个小工具开始。</h2><p>选一款适合你的软件，试着让今天更轻松一点。</p></div>${button("前往下载中心", href("downloads/"), "primary")}</section>`,
@@ -224,8 +228,8 @@ for (const p of products) {
     description: p.description,
     nav: "home",
     extra: `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: `${p.name} ${p.english}`, operatingSystem: p.platforms.join(", "), applicationCategory: p.id === "haruphoto" ? "MultimediaApplication" : "BusinessApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, softwareVersion: release?.tag, url: site.origin + href(`software/${p.id}/`) }).replaceAll("<", "\\u003c")}</script>`,
-    body: `<section class="product-hero shell ${p.color}"><a class="breadcrumb" href="${href("")}">软件集 ${icon("arrow")} ${p.name}</a><div class="product-hero-grid"><div><div class="app-identity">${appIcon(p)}<div><div class="eyebrow">${p.category}</div><h1>${p.name}<small>${p.english}</small></h1></div></div><h2>${p.tagline}</h2><p>${p.description}</p><div class="hero-actions">${button("免费下载", href(`downloads/?software=${p.id}`), "primary")}<a class="text-link" href="${href(`guides/?software=${p.id}`)}">使用教程 ${icon("book")}</a></div><div class="product-platforms">${platform(p)}<span>${e(release?.tag)} 正式版</span></div><p class="requirements">${p.requirements}</p></div><div class="detail-preview">${p.id === "resume-studio" ? resumePreview() : photoPreview()}</div></div></section>
-${illustratedFeatures(p)}
+    body: `<section class="product-hero shell ${p.color}"><a class="breadcrumb" href="${href("")}">软件集 ${icon("arrow")} ${p.name}</a><div class="product-hero-grid"><div><div class="app-identity">${appIcon(p)}<div><div class="eyebrow">${p.category}</div><h1>${p.name}<small>${p.english}</small></h1></div></div><h2>${p.tagline}</h2><p>${p.description}</p><div class="hero-actions">${button("免费下载", href(`downloads/?software=${p.id}`), "primary")}<a class="text-link" href="${href(`guides/?software=${p.id}`)}">使用教程 ${icon("book")}</a></div><div class="product-platforms">${platform(p)}<span>${e(release?.tag)} 正式版</span></div><p class="requirements">${p.requirements}</p></div><div class="detail-preview">${p.id === "resume-studio" ? resumePreview() : p.id === "harumusic" ? musicPreview() : photoPreview()}</div></div></section>
+${p.id === "harumusic" ? `<section class="shell music-features" id="features"><div class="eyebrow">LISTEN YOUR WAY / 功能介绍</div><h2>让音乐融入你的日常。</h2><div class="music-feature-grid"><article><h3>音乐与曲库</h3><p>浏览音乐和曲库，找到想听的内容。</p></article><article><h3>歌词与播放</h3><p>播放时查看歌词，按自己的习惯设置播放器。</p></article><article><h3>桌面体验</h3><p>在 Windows 桌面使用，调整界面和播放设置。</p></article></div></section>` : illustratedFeatures(p)}
 <section class="shell getting-started"><div><span class="eyebrow">YOUR FIRST STEPS</span><h2>打开它，然后开始。</h2><p>不用先注册本站账号，下载后即可开始使用。</p></div><ol>${p.steps.map((s, i) => `<li><span>0${i + 1}</span>${s}</li>`).join("")}</ol></section>
 <section class="shell product-notes"><h2>使用前，了解这些细节。</h2><ul>${p.notes.map((n) => `<li>${n}</li>`).join("")}</ul><a class="text-link" href="${sourceLink(p)}" target="_blank" rel="noopener noreferrer">查看项目源码与完整说明 ${icon("external")}</a></section>
 <section class="shell guides-section"><div class="section-heading"><h2>让上手再简单一点。</h2><a class="text-link" href="${href(`guides/?software=${p.id}`)}">全部教程 ${icon("arrow")}</a></div><div class="guides-grid">${related.map((g) => guideCard(g, true)).join("")}</div></section>`,
@@ -234,7 +238,7 @@ ${illustratedFeatures(p)}
 
 function assetKind(asset) {
   if (/\.apk$/i.test(asset.name)) return ["Android APK", "android", "mobile"];
-  if (/Setup.*\.exe$/i.test(asset.name))
+  if (/(?:Setup.*|HaruMusic-.*-win-x64)\.exe$/i.test(asset.name))
     return ["Windows 安装版", "windows", "windows"];
   if (/\.zip$/i.test(asset.name))
     return ["Windows 便携版", "windows", "document"];
@@ -256,7 +260,7 @@ function downloadCard(p, channel, r = releaseFor(p, channel)) {
     })
     .join(
       "",
-    )}</div><div class="download-card-footer"><a href="${href(`guides/${p.id === "resume-studio" ? "resume-install" : "haruphoto-install"}/`)}">安装说明 ${icon("arrow")}</a>${sums ? `<a href="${e(sums.url)}">SHA256SUMS.txt ${icon("external")}</a>` : ""}<a href="${href(`updates/?software=${p.id}`)}">更新日志 ${icon("arrow")}</a></div></article>`;
+    )}</div><div class="download-card-footer"><a href="${href(`guides/${p.id === "resume-studio" ? "resume-install" : p.id === "harumusic" ? "harumusic-install" : "haruphoto-install"}/`)}">安装说明 ${icon("arrow")}</a>${sums ? `<a href="${e(sums.url)}">SHA256SUMS.txt ${icon("external")}</a>` : ""}<a href="${href(`updates/?software=${p.id}`)}">更新日志 ${icon("arrow")}</a></div></article>`;
 }
 
 await page("downloads/", {
@@ -268,6 +272,7 @@ await page("downloads/", {
     ["all", "全部软件"],
     ["resume-studio", "拾简"],
     ["haruphoto", "Haruphoto"],
+    ["harumusic", "HaruMusic"],
   ]
     .map(
       ([v, l]) =>
@@ -298,6 +303,7 @@ await page("guides/", {
     ["all", "全部教程"],
     ["resume-studio", "拾简 Resume Studio"],
     ["haruphoto", "Haruphoto"],
+    ["harumusic", "HaruMusic"],
   ]
     .map(
       ([v, l]) =>
@@ -369,6 +375,7 @@ await page("updates/", {
     ["all", "全部软件"],
     ["resume-studio", "拾简"],
     ["haruphoto", "Haruphoto"],
+    ["harumusic", "HaruMusic"],
   ]
     .map(
       ([v, l]) =>

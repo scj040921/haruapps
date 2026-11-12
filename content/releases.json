@@ -1,88 +1,142 @@
 {
-  "checkedAt": "2026-10-21T08:19:40.184Z",
+  "checkedAt": "2026-11-12T16:22:05.921Z",
   "products": {
     "resume-studio": {
       "supplemental": [
         {
-          "tag": "android-nightly-20261021-6162d77d",
-          "name": "拾简 Android 0.9.13-nightly.20261021.6162d77d",
-          "channel": "nightly",
-          "published": "2026-10-21T08:10:48Z",
-          "url": "https://github.com/scj040921/resume-studio/releases/tag/android-nightly-20261021-6162d77d",
-          "body": "Android 0.9.13-nightly.20261021.6162d77d\n\n\n\n仅更新安卓端，桌面更新通道保持独立。\n\n# Android v0.9.13\r\n\r\n- 新增“我的简历 → 从 PDF 导入”，支持文字型和扫描件简历，核对后选择模板生成新的简历记录。\r\n- 扫描页面使用随包提供的中英文识别模型，在本机完成 OCR，首次使用无需下载模型或登录 Google 服务。\r\n- 联系方式和经历模块沿用与桌面一致的归类规则，未归类文字保留供核对；原 PDF 不入库，旧简历不覆盖。\r\n- 为保留 ARM／x86 的 32／64 位设备兼容性，APK 增加本地 OCR 库和模型。照片可在导入后手动添加，扫描文字、数字和日期需人工核对。",
+          "tag": "android-v0.9.13",
+          "name": "拾简 Android 0.9.13",
+          "channel": "stable",
+          "published": "2026-10-27T15:39:36Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/android-v0.9.13",
+          "body": "Android 0.9.13\n\n\n\n仅更新安卓端，桌面更新通道保持独立。\n\n# Android v0.9.13\r\n\r\n- 新增“我的简历 → 从 PDF 导入”，支持文字型和扫描件简历，核对后选择模板生成新的简历记录。\r\n- 扫描页面使用随包提供的中英文识别模型，在本机完成 OCR，首次使用无需下载模型或登录 Google 服务。\r\n- 联系方式和经历模块沿用与桌面一致的归类规则，未归类文字保留供核对；原 PDF 不入库，旧简历不覆盖。\r\n- 为保留 ARM／x86 的 32／64 位设备兼容性，APK 增加本地 OCR 库和模型。照片可在导入后手动添加，扫描文字、数字和日期需人工核对。\r\n\r\n- 修复 Word 试卷自动编号和手写题号混合时只识别大题的问题，按小题建立复盘卡片并保留题目内容。\r\n- 笔试复盘按大题、小题的顺序显示标题，自动切换后保存当前题目位置，兼容已导入的题库。",
           "assets": [
             {
-              "name": "ResumeStudio-Android-v0.9.13-nightly.20261021.6162d77d.apk",
-              "size": 31701292,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/android-nightly-20261021-6162d77d/ResumeStudio-Android-v0.9.13-nightly.20261021.6162d77d.apk",
-              "sha256": "4b1324192e88a7a3d697e0750776c24b8a355b141aed48e56af886d85e9b8b76"
+              "name": "ResumeStudio-Android-v0.9.13.apk",
+              "size": 31705388,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/android-v0.9.13/ResumeStudio-Android-v0.9.13.apk",
+              "sha256": "02fda9f68319826bdad5fc91e7fe5f051856450c4d568e74512edd37faf899ab"
+            }
+          ]
+        },
+        {
+          "tag": "android-nightly-20261108-70d53652",
+          "name": "拾简 Android 0.9.14-nightly.20261108.70d53652",
+          "channel": "nightly",
+          "published": "2026-11-08T05:22:52Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/android-nightly-20261108-70d53652",
+          "body": "Android 0.9.14-nightly.20261108.70d53652\n\n\n\n仅更新安卓端，桌面更新通道保持独立。\n\n# Android v0.9.14\r\n\r\n- 调整玻璃弹窗和底部导航的材质，完善面板退场与键盘操作的反馈，并支持减少动态效果。\r\n- 首页“最近的简历”堆叠可展开最近三份简历，并在列表内直接新建简历；只有一份简历时也能使用该入口。\r\n- 收藏职位可按最近更新、公司、职位名称或截止时间排序；没有截止日期的职位排在最后。\r\n- 修复最近简历只有列表淡入的问题：补齐叠卡展开、收起及连续反向点击过渡。\r\n- 统一关闭按钮、链接与展开入口的蓝色触摸高亮，保留按压反馈和键盘焦点提示。\r\n\r\n- 统一页面排版、内容面板、按钮和表单状态，导航保留玻璃材质。\r\n- 简历、收藏、投递、日程、面试题库和笔试复盘提供对应的空状态与直接添加入口。\r\n- 搜索无结果时支持一键清空筛选，窄屏工具栏与操作按钮按宽度排列。\r\n- 页面使用短距离淡入过渡，保留卡片展开、按钮反馈及系统减少动态效果设置。\r\n- 弹窗支持焦点约束、Tab 循环、Esc 取消与关闭后焦点恢复，补全表单标签关联。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.14-nightly.20261108.70d53652.apk",
+              "size": 31762869,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/android-nightly-20261108-70d53652/ResumeStudio-Android-v0.9.14-nightly.20261108.70d53652.apk",
+              "sha256": "6ccfd57da1c99f4dd36eec326316a8a4599499c7c5036b813a0813f77553427a"
             }
           ]
         }
       ],
       "stable": {
-        "tag": "v0.9.6",
-        "name": "拾简 Stable v0.9.6",
+        "tag": "v0.9.11",
+        "name": "拾简 Stable v0.9.11",
         "channel": "stable",
-        "published": "2026-10-15T06:19:05Z",
-        "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.6",
-        "body": "# v0.9.6\r\n\r\n- 修复 Android 下载并校验更新 APK 后提交系统安装会话失败的问题。安装状态回调使用显式、可变 PendingIntent，让 Android PackageInstaller 能返回安装结果。\r\n- 增加生产 APK 验收，确认安装状态 PendingIntent 可接收系统回传状态；继续验证已签名 Nightly 到 Stable 的 Android 覆盖安装。\r\n- 保留 v0.9.5 的更新签名与摘要校验、同日 Nightly 升级版本号和 Android 界面优化。",
+        "published": "2026-10-27T15:44:17Z",
+        "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.11",
+        "body": "# v0.9.11\r\n\r\n- 修复从笔试复盘直接打开简历编辑时可能漏存当前复盘的问题。\r\n- 面试题标记后会记住自动进入的新题；保存期间暂停随机抽题，空题库或仅一题时不再提供无效的随机切换。\r\n- 笔试复盘增加按题号和题目标题直接跳转，记录上次浏览位置；首尾翻页按钮会明确显示不可用状态。\r\n- 修复删除面试题库时，尚未完成的断点保存可能让题库重新出现的问题。\r\n- 修复保存进行中继续输入后立即切题时，最新复盘内容可能未保存的问题。\r\n- 全局搜索中打开笔试复盘时，直接进入对应复盘题库。\r\n- 笔试复盘按“大题标题 → 小题标题 → 题干”显示，兼容已经导入的题库，无需重新导入；没有附加题干时不显示空白内容框。\r\n- 笔试复盘：修复 Word 试卷大题下的小题拆分，支持手写题号与自动编号混用，保留选项、换行题干和代码。\r\n- 修复新建复盘后仍打开旧题库的问题；现在直接打开新建题库的第一题，下拉列表显示各题库的题数。\r\n- 新增“删除复盘题库”，确认后删除题目和复盘记录，并清理待执行的自动保存，避免题库重新出现。\r\n- 修复多行题干和复盘内容只显示首行，以及输入后立即切页可能漏存草稿的问题。\r\n- 新增“我的简历 → 从 PDF 导入”：读取文字型 PDF，对扫描页面调用 Windows 本机 OCR。\r\n- 核对识别到的基本资料和经历模块后，可选择模板生成独立简历；旧简历保留，未归类文字可在预览中调整。\r\n- 自动匹配教育、技能、项目、实习、工作、荣誉等模块；不自动上传简历或保留原 PDF。扫描结果中的姓名、联系方式和日期请人工核对。\r\n- 支持最多 20 页／20 MiB；中文 OCR 需要系统中安装中文识别组件。照片可在生成后手动添加。",
         "assets": [
           {
-            "name": "ResumeStudio-Android-v0.9.6.apk",
-            "size": 8226875,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-Android-v0.9.6.apk",
-            "sha256": "efec3c94549c1b33907fa9465b2a40a3db4cfd8587fd4a2119f057f69339a33c"
+            "name": "ResumeStudio-v0.9.11-Setup-x64.exe",
+            "size": 54757054,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/ResumeStudio-v0.9.11-Setup-x64.exe",
+            "sha256": "378b92d06ee90ea01f9193ad9efd112de05a348cf75a8ac8ea51e216dbd315fe"
           },
           {
-            "name": "ResumeStudio-v0.9.6-Setup-x64.exe",
-            "size": 54578814,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-Setup-x64.exe",
-            "sha256": "8f4add3bc70dedc796f989b223ba1039ed77cccfec0d6d33da1175b191800a50"
-          },
-          {
-            "name": "ResumeStudio-v0.9.6-windows-x64.zip",
-            "size": 70104161,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/ResumeStudio-v0.9.6-windows-x64.zip",
-            "sha256": "d28a8e8272606e9c1a370a026aba590b9c46a2ac41a295b0d2f311a64d795b1e"
+            "name": "ResumeStudio-v0.9.11-windows-x64.zip",
+            "size": 70318481,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/ResumeStudio-v0.9.11-windows-x64.zip",
+            "sha256": "e99626b28f64dd26521459670634ff63341c7e44011bfcea98a4ec2840b2ef81"
           },
           {
             "name": "SHA256SUMS.txt",
-            "size": 570,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.6/SHA256SUMS.txt",
-            "sha256": "d37c1094bf563dbf99ea2f601e8bea45312ed3cd556a5ab75e5494dff709d17f"
+            "size": 572,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/SHA256SUMS.txt",
+            "sha256": "416ba43a9bb73c1b49f7122d5dd57cb2a6aa432abd6019fa3ab5d73075d0b8f2"
           }
         ]
       },
       "nightly": {
-        "tag": "nightly-20261021-6162d77d",
-        "name": "拾简 Nightly nightly-20261021-6162d77d",
+        "tag": "nightly-20261108-70d53652",
+        "name": "拾简 Nightly nightly-20261108-70d53652",
         "channel": "nightly",
-        "published": "2026-10-21T08:15:44Z",
-        "url": "https://github.com/scj040921/resume-studio/releases/tag/nightly-20261021-6162d77d",
-        "body": "Nightly 每日测试版，可能包含尚未稳定的改动。\n\n源码提交：6162d77d912070ca75feb78f58095a825edeebd0",
+        "published": "2026-11-08T05:27:39Z",
+        "url": "https://github.com/scj040921/resume-studio/releases/tag/nightly-20261108-70d53652",
+        "body": "Nightly 每日测试版，可能包含尚未稳定的改动。\n\n源码提交：70d53652be07ddeebc24a20722d8a2d2da8eef21",
         "assets": [
           {
-            "name": "ResumeStudio-v0.9.11-nightly.20261021.6162d77d-Setup-x64.exe",
-            "size": 54727893,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/ResumeStudio-v0.9.11-nightly.20261021.6162d77d-Setup-x64.exe",
-            "sha256": "bdc68a25b57465b4a58f2fee96d59ac7c6c38bce96539a45d762137bde87f4fa"
+            "name": "ResumeStudio-v0.9.12-nightly.20261108.70d53652-Setup-x64.exe",
+            "size": 54773856,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261108-70d53652/ResumeStudio-v0.9.12-nightly.20261108.70d53652-Setup-x64.exe",
+            "sha256": "0ac5355b4ff1632d1ccdcb474fecea5881713cb716ba62c2074d7ba384d4a63e"
           },
           {
-            "name": "ResumeStudio-v0.9.11-nightly.20261021.6162d77d-windows-x64.zip",
-            "size": 70301835,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/ResumeStudio-v0.9.11-nightly.20261021.6162d77d-windows-x64.zip",
-            "sha256": "d8fe2e7be92b0bb09e3249ca13dfce557ac8a2a68c8d4e29df9c2a3aa1d24aa4"
+            "name": "ResumeStudio-v0.9.12-nightly.20261108.70d53652-windows-x64.zip",
+            "size": 70338967,
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261108-70d53652/ResumeStudio-v0.9.12-nightly.20261108.70d53652-windows-x64.zip",
+            "sha256": "251a0b7891d48505be69c62833106914d49e895de35376f600ed05202597c502"
           },
           {
             "name": "SHA256SUMS.txt",
             "size": 624,
-            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261021-6162d77d/SHA256SUMS.txt",
-            "sha256": "51153313335fce5c5a23fbe1514974c772904dc8ada9adcde403e88b9233188a"
+            "url": "https://github.com/scj040921/resume-studio/releases/download/nightly-20261108-70d53652/SHA256SUMS.txt",
+            "sha256": "d246bcf96a7a83eaf8acde6f8355ccc56474ed0a97e5510090d85987fcc119a1"
           }
         ]
       },
       "history": [
+        {
+          "tag": "v0.9.11",
+          "name": "拾简 Stable v0.9.11",
+          "channel": "stable",
+          "published": "2026-10-27T15:44:17Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.11",
+          "body": "# v0.9.11\r\n\r\n- 修复从笔试复盘直接打开简历编辑时可能漏存当前复盘的问题。\r\n- 面试题标记后会记住自动进入的新题；保存期间暂停随机抽题，空题库或仅一题时不再提供无效的随机切换。\r\n- 笔试复盘增加按题号和题目标题直接跳转，记录上次浏览位置；首尾翻页按钮会明确显示不可用状态。\r\n- 修复删除面试题库时，尚未完成的断点保存可能让题库重新出现的问题。\r\n- 修复保存进行中继续输入后立即切题时，最新复盘内容可能未保存的问题。\r\n- 全局搜索中打开笔试复盘时，直接进入对应复盘题库。\r\n- 笔试复盘按“大题标题 → 小题标题 → 题干”显示，兼容已经导入的题库，无需重新导入；没有附加题干时不显示空白内容框。\r\n- 笔试复盘：修复 Word 试卷大题下的小题拆分，支持手写题号与自动编号混用，保留选项、换行题干和代码。\r\n- 修复新建复盘后仍打开旧题库的问题；现在直接打开新建题库的第一题，下拉列表显示各题库的题数。\r\n- 新增“删除复盘题库”，确认后删除题目和复盘记录，并清理待执行的自动保存，避免题库重新出现。\r\n- 修复多行题干和复盘内容只显示首行，以及输入后立即切页可能漏存草稿的问题。\r\n- 新增“我的简历 → 从 PDF 导入”：读取文字型 PDF，对扫描页面调用 Windows 本机 OCR。\r\n- 核对识别到的基本资料和经历模块后，可选择模板生成独立简历；旧简历保留，未归类文字可在预览中调整。\r\n- 自动匹配教育、技能、项目、实习、工作、荣誉等模块；不自动上传简历或保留原 PDF。扫描结果中的姓名、联系方式和日期请人工核对。\r\n- 支持最多 20 页／20 MiB；中文 OCR 需要系统中安装中文识别组件。照片可在生成后手动添加。",
+          "assets": [
+            {
+              "name": "ResumeStudio-v0.9.11-Setup-x64.exe",
+              "size": 54757054,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/ResumeStudio-v0.9.11-Setup-x64.exe",
+              "sha256": "378b92d06ee90ea01f9193ad9efd112de05a348cf75a8ac8ea51e216dbd315fe"
+            },
+            {
+              "name": "ResumeStudio-v0.9.11-windows-x64.zip",
+              "size": 70318481,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/ResumeStudio-v0.9.11-windows-x64.zip",
+              "sha256": "e99626b28f64dd26521459670634ff63341c7e44011bfcea98a4ec2840b2ef81"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 572,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.11/SHA256SUMS.txt",
+              "sha256": "416ba43a9bb73c1b49f7122d5dd57cb2a6aa432abd6019fa3ab5d73075d0b8f2"
+            }
+          ]
+        },
+        {
+          "tag": "android-v0.9.13",
+          "name": "拾简 Android 0.9.13",
+          "channel": "stable",
+          "published": "2026-10-27T15:39:36Z",
+          "url": "https://github.com/scj040921/resume-studio/releases/tag/android-v0.9.13",
+          "body": "Android 0.9.13\n\n\n\n仅更新安卓端，桌面更新通道保持独立。\n\n# Android v0.9.13\r\n\r\n- 新增“我的简历 → 从 PDF 导入”，支持文字型和扫描件简历，核对后选择模板生成新的简历记录。\r\n- 扫描页面使用随包提供的中英文识别模型，在本机完成 OCR，首次使用无需下载模型或登录 Google 服务。\r\n- 联系方式和经历模块沿用与桌面一致的归类规则，未归类文字保留供核对；原 PDF 不入库，旧简历不覆盖。\r\n- 为保留 ARM／x86 的 32／64 位设备兼容性，APK 增加本地 OCR 库和模型。照片可在导入后手动添加，扫描文字、数字和日期需人工核对。\r\n\r\n- 修复 Word 试卷自动编号和手写题号混合时只识别大题的问题，按小题建立复盘卡片并保留题目内容。\r\n- 笔试复盘按大题、小题的顺序显示标题，自动切换后保存当前题目位置，兼容已导入的题库。",
+          "assets": [
+            {
+              "name": "ResumeStudio-Android-v0.9.13.apk",
+              "size": 31705388,
+              "url": "https://github.com/scj040921/resume-studio/releases/download/android-v0.9.13/ResumeStudio-Android-v0.9.13.apk",
+              "sha256": "02fda9f68319826bdad5fc91e7fe5f051856450c4d568e74512edd37faf899ab"
+            }
+          ]
+        },
         {
           "tag": "v0.9.6",
           "name": "拾简 Stable v0.9.6",
@@ -184,124 +238,96 @@
               "sha256": "410f1cd9416cf4f127241c7c2fbd5ae01109766e305f439dfdb767c183529832"
             }
           ]
-        },
-        {
-          "tag": "v0.9.2",
-          "name": "拾简 Stable v0.9.2 — Windows x64",
-          "channel": "stable",
-          "published": "2026-10-14T11:44:39Z",
-          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.2",
-          "body": "# v0.9.2\r\n\r\n- 完善题库导入识别：支持 Word 自动编号、继承的编号样式、独立加粗及大字号标题；优先使用正式标题样式与大纲层级。\r\n- 增加中文题号、圈号、问题／题目／Q 标记和独立加粗标题识别，减少答案步骤及代码块的误切。\r\n- 自动编号切题保留嵌套列表与表格正文，忽略取消编号的普通段落；导入预览显示识别依据。\r\n- 使用实际的 82 题 Word 文档验证题目拆分和导入保存。",
-          "assets": [
-            {
-              "name": "ResumeStudio-v0.9.2-Setup-x64.exe",
-              "size": 54575110,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/ResumeStudio-v0.9.2-Setup-x64.exe",
-              "sha256": "113d4c5a69f8ae3a65165f571ac265b1285cedab9f818f308117f0548ec39fe2"
-            },
-            {
-              "name": "ResumeStudio-v0.9.2-windows-x64.zip",
-              "size": 70086902,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/ResumeStudio-v0.9.2-windows-x64.zip",
-              "sha256": "f08fe833e4e533d40b9ae55cf17dd2568e5ed2ed3bde1dd18c6908b29f821efc"
-            },
-            {
-              "name": "SHA256SUMS.txt",
-              "size": 570,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.2/SHA256SUMS.txt",
-              "sha256": "f8f6383579af65cc242a3194fddaea5b855ba3d17b41a3387e7ee205220acd16"
-            }
-          ]
-        },
-        {
-          "tag": "v0.9.1",
-          "name": "拾简 Stable v0.9.1 — Windows x64",
-          "channel": "stable",
-          "published": "2026-10-14T11:24:13Z",
-          "url": "https://github.com/scj040921/resume-studio/releases/tag/v0.9.1",
-          "body": "# v0.9.1\r\n\r\n- 修复 Word 题库导入时，空白标题段落被识别为题目，导致“题目标题无效”的问题；保留空白段落后的答案内容。\r\n- 导入预览忽略空白标题层级，并在保存前检查题目标题长度与有效性。\r\n- 收藏列表按卡片实际高度紧密排列，移除收起后的多余空位；展开时后续卡片自然下移，收起时恢复。",
-          "assets": [
-            {
-              "name": "ResumeStudio-v0.9.1-Setup-x64.exe",
-              "size": 54572628,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/ResumeStudio-v0.9.1-Setup-x64.exe",
-              "sha256": "0725014a9271aa952d9a5f678bc6434ce452c2d535540ee1714aa665fdf51c8c"
-            },
-            {
-              "name": "ResumeStudio-v0.9.1-windows-x64.zip",
-              "size": 70082241,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/ResumeStudio-v0.9.1-windows-x64.zip",
-              "sha256": "33a2c1ecde119589b90a3f8869af882c34a7d571bbefeffe14ae9ccf7b9db521"
-            },
-            {
-              "name": "SHA256SUMS.txt",
-              "size": 570,
-              "url": "https://github.com/scj040921/resume-studio/releases/download/v0.9.1/SHA256SUMS.txt",
-              "sha256": "a769f910864badd153cf5b987a38d3919e66510a956fdd841d5481b995dc3422"
-            }
-          ]
         }
       ]
     },
     "haruphoto": {
       "supplemental": [],
       "stable": {
-        "tag": "v1.3.9",
-        "name": "haruphoto 1.3.9 Stable · v1.3.9",
+        "tag": "v1.3.10",
+        "name": "haruphoto 1.3.10 Stable · v1.3.10",
         "channel": "stable",
-        "published": "2026-10-15T07:26:19Z",
-        "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.9",
-        "body": "Source commit: 62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.9 · 黑白品牌图标\r\n\r\n- 全面更新为黑白 Logo：将 Haruphoto 的 H 与相机轮廓、镜头结合，采用统一线条与留白。\r\n- 同步桌面快捷方式、任务栏、窗口图标、安装器、启动画面与仓库 README 图标。\r\n- 提供 16–1024 像素图标和多尺寸 ICO，并修正 Windows 各类图标资源的输出尺寸。\r\n- 保存确认后的原始设计及资源生成脚本，方便后续维护。\r\n\r\n安装版下载 `haruphoto-v1.3.9-Setup.exe`；便携版完整解压 `haruphoto-v1.3.9-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "published": "2026-10-21T09:14:26Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.10",
+        "body": "Source commit: 16e889c161ec263105e784336c5b449d629779ee\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.10 · 更清晰的图库与地图体验\r\n\r\n- 重排图库搜索、筛选、分页和筛选摘要，避免窗口宽度变化时控件相互覆盖。\r\n- 更新地图相册的操作栏、地点搜索、照片放置预览和地点照片卡片，布局更清楚且视觉更统一。\r\n- 优化大图库收藏数量统计，改用增量计数，避免每次操作都重新扫描整本图库。\r\n- 修复更新程序遇到安装目录被其他进程占用时的替换回退，并增强失败回滚保护。\r\n- 保持地图位置和批注仅存于本地；照片文件本身不会因这些改动而被修改。\r\n\r\n安装版下载 `haruphoto-v1.3.10-Setup.exe`；便携版请完整解压 `haruphoto-v1.3.10-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
         "assets": [
           {
-            "name": "haruphoto-v1.3.9-portable.zip",
-            "size": 92110109,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-portable.zip",
-            "sha256": "2ac4af6b568ab1bf81bafb880f87c912c102b0396d898447b03b98001d32a8c3"
+            "name": "haruphoto-v1.3.10-portable.zip",
+            "size": 92112150,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/haruphoto-v1.3.10-portable.zip",
+            "sha256": "48bd50dc65409c5b9465fae2fdc158a8e07043f661430cdf787e0ee31fb5a1e2"
           },
           {
-            "name": "haruphoto-v1.3.9-Setup.exe",
-            "size": 163837566,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/haruphoto-v1.3.9-Setup.exe",
-            "sha256": "7ddf37ebc1fa128d8f59a34eea6ad49de307554b67fc1d6dee89c422a2eafe45"
+            "name": "haruphoto-v1.3.10-Setup.exe",
+            "size": 163839616,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/haruphoto-v1.3.10-Setup.exe",
+            "sha256": "0004740889d806684cbcc11af14b73a5ba68a0e6fc05538e0171575f45452dfa"
           },
           {
             "name": "SHA256SUMS.txt",
-            "size": 270,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.9/SHA256SUMS.txt",
-            "sha256": "1a0a55ffa840de2143c59b65dfefe2e6501f9158c8b9eda546024ba2670f7293"
+            "size": 272,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/SHA256SUMS.txt",
+            "sha256": "c8293233cdd6095ff99999e6e87d93c6766cfbf4713ddef848a448c63baa206e"
           }
         ]
       },
       "nightly": {
-        "tag": "nightly-20261015-21",
-        "name": "haruphoto 1.3.9 Nightly · nightly-20261015-21",
+        "tag": "nightly-20261105-46",
+        "name": "haruphoto 1.3.11 Nightly · nightly-20261105-46",
         "channel": "nightly",
-        "published": "2026-10-15T07:22:38Z",
-        "url": "https://github.com/scj040921/haruphoto/releases/tag/nightly-20261015-21",
-        "body": "Source commit: 62be2b36c8a0c9ee4fbbba4fbc0a8af64142184b\n\nNightly 每日测试版：根据当前远端源码构建，可能不稳定。可在设置中切回 Stable。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.9 · 黑白品牌图标\r\n\r\n- 全面更新为黑白 Logo：将 Haruphoto 的 H 与相机轮廓、镜头结合，采用统一线条与留白。\r\n- 同步桌面快捷方式、任务栏、窗口图标、安装器、启动画面与仓库 README 图标。\r\n- 提供 16–1024 像素图标和多尺寸 ICO，并修正 Windows 各类图标资源的输出尺寸。\r\n- 保存确认后的原始设计及资源生成脚本，方便后续维护。\r\n\r\n安装版下载 `haruphoto-v1.3.9-Setup.exe`；便携版完整解压 `haruphoto-v1.3.9-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+        "published": "2026-11-05T16:03:17Z",
+        "url": "https://github.com/scj040921/haruphoto/releases/tag/nightly-20261105-46",
+        "body": "Source commit: de47053c5d2fc8f19f690aeb93487487cd09e9f0\n\nNightly 每日测试版：根据当前远端源码构建，可能不稳定。可在设置中切回 Stable。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# 1.3.11 Nightly\r\n\r\n- 引入 Windows Community Toolkit 8.2.251219 的 WinUI 3 分段选择组件，用于设置中的图库显示模式、胶片条显示方式。\r\n- 保留相册玻璃界面与原生键盘焦点行为，减少模式切换的操作步骤。\r\n- 地图地点展开不再等待缩略图解码，照片预览返回防止重复启动动画。\r\n- 全窗口交互动效遵循 Windows 动画效果设置和应用内动画开关。\r\n- 同步此前图库滚动、缩略图驻留、地图缓存、预览与界面布局重构。\r\n- 安装包继续包含 .NET 8、Windows App SDK 与 VC++ 运行库；无需单独安装开发环境。\r\n\r\n这是测试版，请在设置中选择 Nightly 更新通道获取后续测试更新。",
         "assets": [
           {
-            "name": "haruphoto-nightly-20261015-21-portable.zip",
-            "size": 92110143,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/haruphoto-nightly-20261015-21-portable.zip",
-            "sha256": "3cff71befc0d733d012f0f58c5f029a4f78e5236aa824e527781e09661a673a5"
+            "name": "haruphoto-nightly-20261105-46-portable.zip",
+            "size": 92272900,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261105-46/haruphoto-nightly-20261105-46-portable.zip",
+            "sha256": "105f4486030349763e533be1a1eadca1c598533914efc1ee1444348e59d0d504"
           },
           {
-            "name": "haruphoto-nightly-20261015-21-Setup.exe",
-            "size": 163837566,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/haruphoto-nightly-20261015-21-Setup.exe",
-            "sha256": "8ec5337e26f6c37266945f9adfaf4002f60b9184ed4a2e9ec1a14c679c47c78b"
+            "name": "haruphoto-nightly-20261105-46-Setup.exe",
+            "size": 164035250,
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261105-46/haruphoto-nightly-20261105-46-Setup.exe",
+            "sha256": "dc261d209c86c66aa8629877c8a5a5bf9af597b777d38907aa26371fd180b281"
           },
           {
             "name": "SHA256SUMS.txt",
             "size": 296,
-            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261015-21/SHA256SUMS.txt",
-            "sha256": "d7ff848ce1f3685195bd913dc670f6280bf64a0492464fd4ecfe42c966efb5fc"
+            "url": "https://github.com/scj040921/haruphoto/releases/download/nightly-20261105-46/SHA256SUMS.txt",
+            "sha256": "2c99ceb5d85c9b3efa7af1e8ce0c50173de7cd307ffc3e0c51d378abf5edfe7b"
           }
         ]
       },
       "history": [
+        {
+          "tag": "v1.3.10",
+          "name": "haruphoto 1.3.10 Stable · v1.3.10",
+          "channel": "stable",
+          "published": "2026-10-21T09:14:26Z",
+          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.10",
+          "body": "Source commit: 16e889c161ec263105e784336c5b449d629779ee\n\nStable 稳定发行版。\n\n安装请下载 Setup.exe；便携版请完整解压 portable.zip。无需 CMD 或额外安装 .NET。安装器未商业签名，Windows 可能提示未知发布者。\n\n# v1.3.10 · 更清晰的图库与地图体验\r\n\r\n- 重排图库搜索、筛选、分页和筛选摘要，避免窗口宽度变化时控件相互覆盖。\r\n- 更新地图相册的操作栏、地点搜索、照片放置预览和地点照片卡片，布局更清楚且视觉更统一。\r\n- 优化大图库收藏数量统计，改用增量计数，避免每次操作都重新扫描整本图库。\r\n- 修复更新程序遇到安装目录被其他进程占用时的替换回退，并增强失败回滚保护。\r\n- 保持地图位置和批注仅存于本地；照片文件本身不会因这些改动而被修改。\r\n\r\n安装版下载 `haruphoto-v1.3.10-Setup.exe`；便携版请完整解压 `haruphoto-v1.3.10-portable.zip`。程序自带运行时，无需另装 .NET 或使用 CMD。",
+          "assets": [
+            {
+              "name": "haruphoto-v1.3.10-portable.zip",
+              "size": 92112150,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/haruphoto-v1.3.10-portable.zip",
+              "sha256": "48bd50dc65409c5b9465fae2fdc158a8e07043f661430cdf787e0ee31fb5a1e2"
+            },
+            {
+              "name": "haruphoto-v1.3.10-Setup.exe",
+              "size": 163839616,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/haruphoto-v1.3.10-Setup.exe",
+              "sha256": "0004740889d806684cbcc11af14b73a5ba68a0e6fc05538e0171575f45452dfa"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "size": 272,
+              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.10/SHA256SUMS.txt",
+              "sha256": "c8293233cdd6095ff99999e6e87d93c6766cfbf4713ddef848a448c63baa206e"
+            }
+          ]
+        },
         {
           "tag": "v1.3.9",
           "name": "haruphoto 1.3.9 Stable · v1.3.9",
@@ -413,32 +439,106 @@
               "sha256": "cc2e88eaebc92b87104c951b937a04d7d297e50511a1f2b32fa9323b7e59533c"
             }
           ]
-        },
+        }
+      ]
+    },
+    "harumusic": {
+      "supplemental": [],
+      "stable": {
+        "tag": "v0.1.12",
+        "name": "HaruMusic 0.1.12",
+        "channel": "stable",
+        "published": "2026-11-12T15:55:40Z",
+        "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.12",
+        "body": "# HaruMusic 0.1.12\n\n- 移除安卓顶栏和底栏周围的整条背景遮罩。页面滚动区域延伸至屏幕边缘，顶部安全间距随正文滚动；顶栏在滚动后收起，返回顶部时恢复。\n- 提高导航、迷你播放器、按钮和播放设置的玻璃通透度，减轻白色叠层、高光和阴影，关闭安卓系统栏对比遮罩。\n- 底栏玻璃滑块支持左右触摸拖动、随速度拉伸和弹簧回弹，中途可反向打断。处理手势取消、尺寸变化和减少动态效果设置，并修复链接拖拽与安卓触摸捕获冲突。\n- 彻底移除 Salt UI 的入口、设置、播放器分支和样式，旧选择自动迁移到 Liquid Glass，保留歌词偏好、曲库和音源配置。\n\n验证：156 项单元测试、类型检查、国际化检查、生产构建和嵌入 API 流媒体测试通过；自动化验证了安卓布局、鼠标及触摸手势、歌词和下载交互，并启动实际 Electron 渲染器检查了旧配置迁移与 Liquid Glass 播放界面。手机原生系统栏和不同 WebView 的实际合成效果仍以设备验收为准。",
+        "assets": [
+          {
+            "name": "HaruMusic-0.1.12-win-x64.exe",
+            "size": 125036168,
+            "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.12/HaruMusic-0.1.12-win-x64.exe",
+            "sha256": "75f08151122a78be63ef808e08ebe3fcbbc649ac46efc0cb60796e95dfbaeada"
+          }
+        ]
+      },
+      "nightly": null,
+      "history": [
         {
-          "tag": "v1.3.2",
-          "name": "haruphoto v1.3.2",
+          "tag": "v0.1.12",
+          "name": "HaruMusic 0.1.12",
           "channel": "stable",
-          "published": "2026-10-09T09:19:16Z",
-          "url": "https://github.com/scj040921/haruphoto/releases/tag/v1.3.2",
-          "body": "# haruphoto v1.3.2\n\n## 下载与安装\n\n- 推荐：下载 `haruphoto-v1.3.2-Setup.exe`，直接双击安装，无需运行 CMD，也无需额外安装 .NET 或 VC++ 运行时。\n- 便携版：下载 `haruphoto-v1.3.2-portable.zip`，完整解压后运行 `PhotoAlbum.exe`，不要只复制 EXE。\n- 支持 Windows 10 1809+ / Windows 11 的 x64 系统；不支持 32 位 Windows。\n- GitHub 自动生成的 Source code 是源码，不是安装包。\n- 当前安装器未购买商业代码签名证书，Windows 可能提示未知发布者。请核对本仓库与 SHA256；本版本并未消除 SmartScreen 签名提示。\n\n## 改进\n\n- 保留原比例紧密瀑布流、缩放、切换动画、取色模糊背景和新版顶栏/底栏。\n- 设置分区、搜索、保存/取消、分区重置及自定义外观方案；新增 2–4 张对比选片与同步缩放。\n- 修复详情栏被胶片条挡住、远端缩略图空白、深色设置卡片和侧栏显示问题。\n- 修复快速预览切换与关闭时的动画竞争、重复悬停事件、批量选择残留。\n- 补齐预览序号和损坏图片提示；取色采用小尺寸采样，降低大照片的内存开销。\n- 关闭自动扫描后不再监控文件夹，离线图片的元数据不会因普通保存丢失。\n- 更新只提示不强制安装；可查看版本说明、取消下载。先下载并验证，失败保持当前应用运行；升级替换失败会回滚。\n- 完善公开更新清单、SHA256、完整自包含包与发布前自动测试，避免朋友必须运行 CMD 安装。\n\n## 验证边界\n\n已在开发机使用独立临时图库执行界面回归，并测试下载安装器核心、损坏包拒绝及升级回滚。没有真实覆盖所有 Windows、DPI、显卡或无开发环境的全新电脑，不能承诺绝对没有 bug。详细范围见仓库 `docs/RELEASE_TEST_REPORT.md`。",
+          "published": "2026-11-12T15:55:40Z",
+          "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.12",
+          "body": "# HaruMusic 0.1.12\n\n- 移除安卓顶栏和底栏周围的整条背景遮罩。页面滚动区域延伸至屏幕边缘，顶部安全间距随正文滚动；顶栏在滚动后收起，返回顶部时恢复。\n- 提高导航、迷你播放器、按钮和播放设置的玻璃通透度，减轻白色叠层、高光和阴影，关闭安卓系统栏对比遮罩。\n- 底栏玻璃滑块支持左右触摸拖动、随速度拉伸和弹簧回弹，中途可反向打断。处理手势取消、尺寸变化和减少动态效果设置，并修复链接拖拽与安卓触摸捕获冲突。\n- 彻底移除 Salt UI 的入口、设置、播放器分支和样式，旧选择自动迁移到 Liquid Glass，保留歌词偏好、曲库和音源配置。\n\n验证：156 项单元测试、类型检查、国际化检查、生产构建和嵌入 API 流媒体测试通过；自动化验证了安卓布局、鼠标及触摸手势、歌词和下载交互，并启动实际 Electron 渲染器检查了旧配置迁移与 Liquid Glass 播放界面。手机原生系统栏和不同 WebView 的实际合成效果仍以设备验收为准。",
           "assets": [
             {
-              "name": "haruphoto-v1.3.2-portable.zip",
-              "size": 90377786,
-              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/haruphoto-v1.3.2-portable.zip",
-              "sha256": "915d1ad77965023c27616666acf3600310cd274115fbb2f18016d8ab6d106c49"
-            },
+              "name": "HaruMusic-0.1.12-win-x64.exe",
+              "size": 125036168,
+              "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.12/HaruMusic-0.1.12-win-x64.exe",
+              "sha256": "75f08151122a78be63ef808e08ebe3fcbbc649ac46efc0cb60796e95dfbaeada"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.11",
+          "name": "HaruMusic 0.1.11",
+          "channel": "stable",
+          "published": "2026-11-12T09:35:00Z",
+          "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.11",
+          "body": "# HaruMusic 0.1.11\n\n- Give online track preparation a shared 15-second budget across resolution, initial media buffering and refresh retries, rather than restarting full independent budgets. Internal network retries share the original audio deadline. Failed media URLs are skipped briefly so fallback does not keep selecting the same bad link.\n- Abort pending audio loads and stop scheduling old source work when another song is selected. Bound sandbox HTTP calls and native plugin media calls to their stage budgets. Warm only the immediate next track, and discard outdated warmup results before publishing them.\n- Add a Playback Diagnostics section in mobile playback settings. Copy the last five attempts' resolution, buffering and total timing and source outcomes; reports omit audio URLs, HTTP headers and internal request IDs.\n- Reserve the mobile toolbar area once at layout level and give page content its own scroll viewport below it. Remove duplicate top safe-area padding from search/download pages. Artwork, titles and rows no longer scroll under the top controls.\n- Center and enlarge Android player track titles with weight 800, a tight system sans-serif stack and symmetric side gutters; center artist metadata and position Like independently.\n\nValidation: 153 unit tests; TypeScript; embedded API streaming/cancellation smoke checks; mobile browser checks for five routes with simulated status-bar insets, title centering/weight/size, lyric gestures and diagnostics UI. Public-source latency on the user's physical phone remains unmeasured. A bounded budget prevents compounded waits but cannot make an inaccessible source playable.",
+          "assets": [
             {
-              "name": "haruphoto-v1.3.2-Setup.exe",
-              "size": 162161790,
-              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/haruphoto-v1.3.2-Setup.exe",
-              "sha256": "68177c46ed9dd28d06e349c9eb99e7861a39f7569aacf4d362cf97835d4a72f9"
-            },
+              "name": "HaruMusic-0.1.11-win-x64.exe",
+              "size": 125042949,
+              "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.11/HaruMusic-0.1.11-win-x64.exe",
+              "sha256": "52427e24f8ca53726dd21150f94e292534ff8460c2b4f6558c45c52daa11d007"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.10",
+          "name": "HaruMusic 0.1.10",
+          "channel": "stable",
+          "published": "2026-11-12T09:04:54Z",
+          "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.10",
+          "body": "# HaruMusic 0.1.10\n\n- Remove the local dark gradient under Android player controls so the album atmosphere continues to the bottom edge.\n- Give the preferred music source a 350ms head start, then allow at most two enabled sources to resolve concurrently. Use the first verified result at that source's highest supported quality; stop scheduling additional sources once a result wins. URL-cache writes no longer delay playback startup.\n- Add native Android DownloadManager integration, a download list, progress, cancellation, re-resolution retry and confirmed deletion. Downloads continue in the system background. Completed tracks can be played offline inside HaruMusic, including after reopening the app. Android 10+ uses Music/HaruMusic; older Android versions use app-specific Music storage.\n- Add a brief, skippable intro using the shared desktop logo; honor reduced-motion preferences and allow Back to dismiss it.\n- Improve mobile playback button semantics, keyboard access, touch targets and accessibility appearance fallbacks. See docs/HIG-AUDIT-0.1.10.md for inspected areas and remaining device-level acceptance checks.\n\nValidation: 148 unit tests, TypeScript, Android Java compilation, embedded streaming/cancellation smoke checks, and mobile browser UI checks with a native bridge fixture. Automated approval blocked the emulator APK installation/download integration command; actual native download completion and real-network playback latency remain unverified on a physical phone. This release does not claim full HIG compliance or universal source availability.",
+          "assets": [
             {
-              "name": "SHA256SUMS.txt",
-              "size": 270,
-              "url": "https://github.com/scj040921/haruphoto/releases/download/v1.3.2/SHA256SUMS.txt",
-              "sha256": "6766b30806ca38d80ce458d7196d194123edbfadcb84ca2912dd9f23f9a27c86"
+              "name": "HaruMusic-0.1.10-win-x64.exe",
+              "size": 125037498,
+              "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.10/HaruMusic-0.1.10-win-x64.exe",
+              "sha256": "74cbf8fba6c87b69247b754f802de34541578540d82117d3b870c284d41e76ae"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.9",
+          "name": "HaruMusic 0.1.9",
+          "channel": "stable",
+          "published": "2026-11-12T07:52:59Z",
+          "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.9",
+          "body": "# HaruMusic 0.1.9\n\n- Stream media continuously through the on-device gateway on Android and desktop instead of buffering a full range block before responding. Preserve source headers, byte ranges, cancellation and backpressure. No external public proxy is required by this transport.\n- Start playback at the first decoded audio frame. Desktop media probes stop after audio headers instead of reading a complete file from CDNs that ignore Range.\n- Fix normal mobile lyrics accidentally being flex-centered outside their scrolling viewport. Restore current-line focus, translation and complete wrapping. Use stable line metrics, interruptible spring scrolling and audio-clock paint updates for both lyric modes.\n- Close auxiliary windows and active HTTP work during Windows update installation. The installer closes only the executable at its destination installation path, including its helper process tree.\n\nValidation: 141 unit tests, TypeScript, embedded API streaming/cancellation checks and mobile viewport automation. Real-device public source playback and end-to-end replacement of an already installed desktop app remain separate acceptance checks; source catalog and account restrictions still apply.",
+          "assets": [
+            {
+              "name": "HaruMusic-0.1.9-win-x64.exe",
+              "size": 125035911,
+              "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.9/HaruMusic-0.1.9-win-x64.exe",
+              "sha256": "dc0c568ed8dd4923317db798322ceeba05d1a3eef18978052679e73d8dbc7921"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.8",
+          "name": "HaruMusic 0.1.8",
+          "channel": "stable",
+          "published": "2026-11-11T18:53:28Z",
+          "url": "https://github.com/scj040921/HaruMusic/releases/tag/v0.1.8",
+          "body": "# HaruMusic 0.1.8\n\n- Reduce Android first-audio buffering by requesting 128 KiB foreground media blocks; keep bounded read-ahead and cancellation, with the desktop cache retaining its 512 KiB default.\n- Cap music source resolution at 6 seconds per provider and 12 seconds for the full chain. Stop repeating Netease quality requests after an account or risk-control rejection, preserve a valid highest-quality fallback, and show a short source failure reason.\n- Match cross-platform MusicFree results against the native catalog item before resolving, preserving its native ID, hash, and available qualities; cache verified matches briefly to speed repeat playback.\n- Keep album artwork prominent in the immersive Android player, raise the control cluster, and update the blurred artwork atmosphere from the audio clock at a low update rate to reduce unnecessary rendering work.\n\nValidation: 139 automated tests, TypeScript checks, and Android embedded API smoke checks including the 128 KiB first-range assertion. The emulator has no outbound network, so live provider playback could not be verified there. Source access still depends on each provider's current catalog, account permissions, and CDN availability; no parser can guarantee every online track.\n\nThe bounded range scheduling approach was studied from [Salt Extend Online](https://github.com/YGHFv/Salt-Extend-Online). HaruMusic implements it independently for Fetch and HTML audio; it does not bundle the project's Java or BASS implementation.",
+          "assets": [
+            {
+              "name": "HaruMusic-0.1.8-win-x64.exe",
+              "size": 125033538,
+              "url": "https://github.com/scj040921/HaruMusic/releases/download/v0.1.8/HaruMusic-0.1.8-win-x64.exe",
+              "sha256": "7822a20505951f38356599db7a8e211525fd5b1e5cb990f6da7acfc9cca4fc16"
             }
           ]
         }

@@ -20,7 +20,9 @@ export function selectReleases(releases, repo) {
       (r) =>
         !r.draft &&
         r.assets?.some((a) =>
-          /(?:Setup.*\.exe|\.apk|(?:portable|windows-x64)\.zip)$/i.test(a.name),
+          /(?:Setup.*\.exe|HaruMusic-[^/]*-win-x64\.exe|\.apk|(?:portable|windows-x64)\.zip)$/i.test(
+            a.name,
+          ),
         ),
     )
     .sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at));
@@ -35,7 +37,7 @@ export function selectReleases(releases, repo) {
           body: (release.body || "").replace(/<!--[\s\S]*?-->/g, "").trim(),
           assets: release.assets
             .filter((a) =>
-              /(?:Setup.*\.exe|\.apk|(?:portable|windows-x64)\.zip|SHA256SUMS\.txt)$/i.test(
+              /(?:Setup.*\.exe|HaruMusic-[^/]*-win-x64\.exe|\.apk|(?:portable|windows-x64)\.zip|SHA256SUMS\.txt)$/i.test(
                 a.name,
               ),
             )
