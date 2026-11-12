@@ -181,7 +181,7 @@ function photoPreview() {
 }
 
 function musicPreview() {
-  return `<div class="music-preview" aria-label="音乐播放器示意图"><div class="music-cover">♪</div><div><small>HARUMUSIC · 播放示意</small><h3>让音乐陪伴此刻</h3><p>你的音乐，你的节奏</p><div class="music-progress"></div><span>◀　Ⅱ　▶</span></div></div>`;
+  return `<div class="music-preview" aria-label="音乐播放器示意图"><div class="music-cover"><img src="${asset("harumusic.png")}" alt="" width="110" height="110"></div><div><small>HARUMUSIC · 播放示意</small><h3>让音乐陪伴此刻</h3><p>你的音乐，你的节奏</p><div class="music-progress"></div><span>◀　Ⅱ　▶</span></div></div>`;
 }
 function showcase(product) {
   const collection = product ? [product] : products.slice(0, 2);
@@ -229,7 +229,7 @@ for (const p of products) {
     nav: "home",
     extra: `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: `${p.name} ${p.english}`, operatingSystem: p.platforms.join(", "), applicationCategory: p.id === "haruphoto" ? "MultimediaApplication" : "BusinessApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, softwareVersion: release?.tag, url: site.origin + href(`software/${p.id}/`) }).replaceAll("<", "\\u003c")}</script>`,
     body: `<section class="product-hero shell ${p.color}"><a class="breadcrumb" href="${href("")}">软件集 ${icon("arrow")} ${p.name}</a><div class="product-hero-grid"><div><div class="app-identity">${appIcon(p)}<div><div class="eyebrow">${p.category}</div><h1>${p.name}<small>${p.english}</small></h1></div></div><h2>${p.tagline}</h2><p>${p.description}</p><div class="hero-actions">${button("免费下载", href(`downloads/?software=${p.id}`), "primary")}<a class="text-link" href="${href(`guides/?software=${p.id}`)}">使用教程 ${icon("book")}</a></div><div class="product-platforms">${platform(p)}<span>${e(release?.tag)} 正式版</span></div><p class="requirements">${p.requirements}</p></div><div class="detail-preview">${p.id === "resume-studio" ? resumePreview() : p.id === "harumusic" ? musicPreview() : photoPreview()}</div></div></section>
-${p.id === "harumusic" ? `<section class="shell music-features" id="features"><div class="eyebrow">LISTEN YOUR WAY / 功能介绍</div><h2>让音乐融入你的日常。</h2><div class="music-feature-grid"><article><h3>音乐与曲库</h3><p>浏览音乐和曲库，找到想听的内容。</p></article><article><h3>歌词与播放</h3><p>播放时查看歌词，按自己的习惯设置播放器。</p></article><article><h3>桌面体验</h3><p>在 Windows 桌面使用，调整界面和播放设置。</p></article></div></section>` : illustratedFeatures(p)}
+${illustratedFeatures(p)}
 <section class="shell getting-started"><div><span class="eyebrow">YOUR FIRST STEPS</span><h2>打开它，然后开始。</h2><p>不用先注册本站账号，下载后即可开始使用。</p></div><ol>${p.steps.map((s, i) => `<li><span>0${i + 1}</span>${s}</li>`).join("")}</ol></section>
 <section class="shell product-notes"><h2>使用前，了解这些细节。</h2><ul>${p.notes.map((n) => `<li>${n}</li>`).join("")}</ul><a class="text-link" href="${sourceLink(p)}" target="_blank" rel="noopener noreferrer">查看项目源码与完整说明 ${icon("external")}</a></section>
 <section class="shell guides-section"><div class="section-heading"><h2>让上手再简单一点。</h2><a class="text-link" href="${href(`guides/?software=${p.id}`)}">全部教程 ${icon("arrow")}</a></div><div class="guides-grid">${related.map((g) => guideCard(g, true)).join("")}</div></section>`,

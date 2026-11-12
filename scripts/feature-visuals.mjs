@@ -7,6 +7,14 @@ export function featureVisual(kind, { landscape, icon }) {
   const paper = (variant, label) =>
     `<div class="template-option"><div class="template-sheet template-${variant}"><div class="template-name">林同学</div><small>软件工程师 · 示例简历</small><div class="template-rule"></div>${["教育经历", "项目经历", "专业技能"].map((title, i) => `<div class="template-block"><b>${title}</b>${bar()}${bar(i === 1 ? "88%" : "70%")}${i === 1 ? bar("80%") : ""}</div>`).join("")}</div><span>${label}</span></div>`;
   switch (kind) {
+    case "music-library":
+      return `<div class="music-demo"><div class="music-demo-head">HaruMusic <span>⌕ 搜索音乐</span></div><div class="music-demo-body"><aside>发现音乐<br><br>我的歌单<br><br>最近播放</aside><main><small>YOUR MUSIC</small><h3>今天想听些什么？</h3><div class="music-albums"><i>♫</i><i>♪</i><i>♬</i></div><p>为你收藏的声音</p><div class="music-demo-lines"><span>01　示例曲目　<span>—</span></span><span>02　下一首歌　<span>—</span></span></div></main></div><div class="music-demo-bar">♫　示例曲目 <b>◀　▶　▶</b> ━━━</div></div>`;
+    case "music-player":
+      return `<div class="music-demo music-playing"><div class="music-demo-head">HaruMusic <span>正在播放</span></div><div class="music-playing-content"><div class="music-disc">♫</div><div><small>NOW PLAYING</small><h3>此刻的旋律</h3><p>示例音乐 · 示例专辑</p><div class="music-demo-progress"></div><p>◀　　 ●　　 ▶</p></div></div><div class="music-demo-bar">播放队列　 <b>01 示例曲目　02 下一首歌</b></div></div>`;
+    case "music-lyrics":
+      return `<div class="music-demo music-lyric-demo"><div class="music-demo-head">HaruMusic <span>歌词视图</span></div><div class="music-playing-content"><div class="music-disc">♪</div><div class="music-words"><p>在旋律之间</p><h3>让这一刻慢下来</h3><p>把声音留在身边</p></div></div><div class="music-demo-bar">♫　示例音乐 <b>◀　▶　▶</b> ━━━</div></div>`;
+    case "music-settings":
+      return `<div class="music-demo"><div class="music-demo-head">HaruMusic <span>设置</span></div><div class="music-setting-demo"><h3>找到适合自己的方式</h3><div><span>界面外观</span><b>跟随系统　⌄</b></div><div><span>歌词显示</span><b>按喜好调整　⌄</b></div><div><span>播放设置</span><b>查看选项　›</b></div></div></div>`;
     case "templates":
       return `<div class="visual-toolbar"><span>${icon("document")}选择适合岗位的表达</span><span class="visual-badge">PDF 导出</span></div><div class="visual-templates">${paper("simple", "简洁清晰")}${paper("accent", "模块有序")}${paper("photo", "照片版式")}</div><div class="visual-bottom"><span>${icon("check")}内容由你填写</span><span>${icon("check")}预览后再导出</span></div>`;
     case "applications":
